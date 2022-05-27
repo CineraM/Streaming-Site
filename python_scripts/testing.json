@@ -1,0 +1,104 @@
+[
+    {
+        "anime_id": 40776,
+        "artist_id": null,
+        "theme_id": "40776-00",
+        "title": "Toppakou",
+        "type": "OP",
+        "notes": "",
+        "episodes": "",
+        "category": "",
+        "mirrors": [
+            {
+                "quality": "",
+                "mirror": "https://animethemes.moe/video/HaikyuuS5-OP1.webm"
+            }
+        ],
+        "__type__": "Theme"
+    },
+    {
+        "anime_id": 5114,
+        "artist_id": null,
+        "theme_id": "5114-00",
+        "title": "again",
+        "type": "OP1",
+        "notes": "",
+        "episodes": "1-14",
+        "category": "",
+        "mirrors": [
+            {
+                "quality": "NC, BD, 1080",
+                "mirror": "https://animethemes.moe/video/FullmetalAlchemistBrotherhood-OP1.webm"
+            }
+        ],
+        "__type__": "Theme"
+    },
+    {
+        "anime_id": 5114,
+        "artist_id": 8965,
+        "theme_id": "5114-01",
+        "title": "Hologram",
+        "type": "OP2",
+        "notes": "",
+        "episodes": "15-26",
+        "category": "",
+        "mirrors": [
+            {
+                "quality": "NC, BD, 1080",
+                "mirror": "https://animethemes.moe/video/FullmetalAlchemistBrotherhood-OP2.webm"
+            }
+        ],
+        "__type__": "Theme"
+    },
+    {
+        "anime_id": 5114,
+        "artist_id": 10863,
+        "theme_id": "5114-02",
+        "title": "Golden Time Lover",
+        "type": "OP3",
+        "notes": "",
+        "episodes": "27-38",
+        "category": "",
+        "mirrors": [
+            {
+                "quality": "NC, BD, 1080",
+                "mirror": "https://animethemes.moe/video/FullmetalAlchemistBrotherhood-OP3.webm"
+            }
+        ],
+        "__type__": "Theme"
+    },
+    {
+        "anime_id": 5114,
+        "artist_id": 11511,
+        "theme_id": "5114-03",
+        "title": "Period",
+        "type": "OP4",
+        "notes": "",
+        "episodes": "39-50",
+        "category": "",
+        "mirrors": [
+            {
+                "quality": "NC, BD, 1080",
+                "mirror": "https://animethemes.moe/video/FullmetalAlchemistBrotherhood-OP4.webm"
+            }
+        ],
+        "__type__": "Theme"
+    },
+    {
+        "anime_id": 5114,
+        "artist_id": 7539,
+        "theme_id": "5114-04",
+        "title": "Rain",
+        "type": "OP5",
+        "notes": "",
+        "episodes": "51-62",
+        "category": "",
+        "mirrors": [
+            {
+                "quality": "NC, BD, 1080",
+                "mirror": "https://animethemes.moe/video/FullmetalAlchemistBrotherhood-OP5.webm"
+            }
+        ],
+        "__type__": "Theme"
+    }
+]

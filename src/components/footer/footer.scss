@@ -1,0 +1,34 @@
+.footer{
+    //color of the nav bar
+    color:#FF4C29;
+    background-color: #334756;
+    font-size: 16px;
+    text-shadow: 2px 2px black;
+    width: 100%;    // extend all the screen
+
+    top: 10px;
+    
+    .container
+    {
+        height: 50px;                   
+        padding: 0px 50px;              // horizontal padding
+        display: flex;                  
+        align-items: center;
+        justify-content: space-between; // space between the left and right containters
+                                        // left is on the left side, right is on the right side of the screen
+
+        .info{                      
+            display: flex;          
+            align-items: center; 
+            cursor: pointer;   
+            img{
+                margin-right: 5px;
+                height: 30px;
+            }
+
+            span{
+                margin-right: 20px;
+            }
+        }
+    }
+}

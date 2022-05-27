@@ -1,0 +1,148 @@
+
+
+
+.list{
+    margin-left: 50px;
+    margin-right: 55px;
+    //margin-bottom: 5px;
+    //margin-top: 15px;
+    //overflow-y: hidden;
+    //position: relative;
+
+    .listTitle{
+        position: relative; 
+        top: -5px;
+        color: white;
+        font-size: 45px;
+        text-shadow: 5px 5px black;
+        margin-left: 20px;
+    }
+
+    .poster_row{
+        display: flex;
+        position: relative;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        padding: 20px;
+        transition: transform 1000ms;
+    }
+
+    .poster_row:hover{
+        overflow-x: scroll;
+        scrollbar-base-color:white;
+    }
+
+    .poster_row:hover::-webkit-scrollbar-thumb{
+        background: #FF4C29;
+    }
+
+}
+
+//scroll bar stuff
+.poster_row::-webkit-scrollbar{
+    height: 6px;
+    cursor: pointer;
+}
+
+
+.poster_row::-webkit-scrollbar-track{
+    border-radius: 40px;
+    background: var(--main-color);
+}
+
+.poster_row::-webkit-scrollbar-thumb{
+    border-radius: 40px;
+    background: var(--main-color);
+}
+
+
+
+// alternative if I ever figure out how to scroll orizontally on click event
+
+// .list{
+//     margin-left: 50px;
+//     margin-right: 55px;
+    
+//     //margin-bottom: 5px;
+//     //margin-top: 15px;
+//     //overflow-y: hidden;
+//     //position: relative;
+
+//     .left_button{
+//         width: 50px;
+//         height: 100%;
+//         color: #FF4C29;
+//         position: absolute;
+//         left: -35px;
+//     }
+
+//     .right_button{
+//         width: 50px;
+//         height: 100%;
+//         color: #FF4C29;
+//         right: -45px;
+//         position: absolute;
+//         z-index: 99;
+//     }
+
+//     .wrapper{
+//         position:relative;
+//         .poster_row{
+//             position: relative;
+//             overflow-y: hidden;
+//             overflow-x: scroll;
+//             padding: 20px;
+//             transition: transform 1000ms;
+//             display: flex;
+//         }
+//     }
+
+    
+//     .listTitle{
+//         display:grid;
+//         position: relative; 
+//         top: -5px;
+//         color: white;
+//         font-size: 45px;
+//         text-shadow: 5px 5px black;
+//         margin-left: 20px;
+//     }
+
+//     // .poster_row:hover{
+//     //     overflow-x: scroll;
+//     //     scrollbar-base-color:white;
+//     // }
+
+//     // .poster_row:hover::-webkit-scrollbar-thumb{
+//     //     background: #FF4C29;
+//     // }
+
+// }
+
+// .list:hover{
+//     .poster_row{
+//         overflow-x: scroll;
+//         //scrollbar-base-color:white;
+//     }
+
+//     .poster_row::-webkit-scrollbar-thumb{
+//         background: #FF4C29;
+//     }
+// }
+
+// //scroll bar stuff
+// .poster_row::-webkit-scrollbar{
+//     height: 6px;
+//     cursor: pointer;
+// }
+
+
+// .poster_row::-webkit-scrollbar-track{
+//     border-radius: 40px;
+//     background: var(--main-color);
+// }
+
+// .poster_row::-webkit-scrollbar-thumb{
+//     border-radius: 40px;
+//     background: var(--main-color);
+// }
