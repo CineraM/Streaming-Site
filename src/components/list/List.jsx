@@ -1,20 +1,24 @@
 
-import { ArrowBackIos, ArrowForwardIos } from '@material-ui/icons'
-import { useRef } from 'react';
+// import { ArrowBackIos, ArrowForwardIos } from '@material-ui/icons'
+// import { useRef } from 'react';
 import Listitem from '../listItem/Listitem'
 import './list.scss'
 
-export default function List() {
+export default function List(props) {
   
-  const ref = useRef(null);
-  const scroll = (scrollOffset) => {
-    ref.current.scrollLeft += scrollOffset;
-  };
+  // const ref = useRef(null);
+  // const scroll = (scrollOffset) => {
+  //   ref.current.scrollLeft += scrollOffset;
+  // };
 
+
+  
   return (
     <div className='list'>
       
-        <span className='listTitle'>Action</span>
+        <span className='listTitle'>
+          {props.title}
+        </span>
       
           <div className="poster_row">
               <Listitem/>

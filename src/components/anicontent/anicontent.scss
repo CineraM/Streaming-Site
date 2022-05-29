@@ -1,0 +1,61 @@
+.anicontent{
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    
+    video{
+        width: 50vw;
+    }
+
+    container{
+        width: 100%;
+        max-width: 50vw;
+    }
+
+
+    .container{
+        display: flex;                  
+        align-items: center;
+        justify-content: space-between;
+
+        z-index: 900;
+        
+        right: 5%;
+        font-weight: 500;
+        color: white;
+        text-shadow: 3px 3px var(--main-color);
+        align-items: left;
+        
+
+        .left{
+            z-index: 900;
+            margin-right: 20px;
+            font-size: 30px;
+            font-weight: 500;
+            color: white;
+            text-shadow: 3px 3px var(--main-color);
+            align-items: right;
+    
+            &.vertical{ // if vertical increase image size
+                font-size: 20px;
+            }
+    
+            .themes{
+                cursor: pointer;
+                background-color: var(--main-color);
+                font-size: 15px;
+                border: 2px solid #FF4C29;
+                border-radius: 2px;
+                outline:0px;
+                color: white;
+                padding: 5px;
+                &.vertical{ // if vertical increase image size
+                    padding: 2px;
+                }
+            }
+        }
+    }
+}

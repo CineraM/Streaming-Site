@@ -33,10 +33,13 @@ const Navbar = () => {
               onClick={() => navigate("/login")} 
             />
             <span
-            onClick={() => navigate("/admin_dashboard")}>
+            onClick={() => navigate("/home")}>
               Homepage 
             </span>
-            <span>Series</span>
+            <span
+              onClick={() => navigate("/anime")}
+            >
+              Series</span>
             <span>Movies</span>
             <span>Trending</span>
           </div>

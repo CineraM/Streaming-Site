@@ -18,15 +18,15 @@ const Home = () => {
         <title>{ "Ani-Fox" }</title>
       </Helmet>
       <Navbar/>
-
       <Featured type="series"/>
       <br/>
 
-      <List/>
-      <List/>
-      <List/>
-      <List/>
+      <List title="Action"/>
+      <List title="Sports"/>
+      <List title="Drama"/>
+      <List title="Comedy"/>
 
+      
       <br/>
       <Footer/>
     </div>

@@ -1,5 +1,6 @@
 import "./app.scss"
 import Home from "./home/Home";
+import Anime from "./anime/Anime";
 
 import {
   BrowserRouter as Router,
@@ -16,6 +17,8 @@ function App(){
         <Route path="/" element={<Home />} />
 
         <Route path="/home" element={<Home />} />
+
+        <Route path="/anime" element={<Anime />} />
 
         <Route path="/login" element={<div>LOGIN</div> } />
 
