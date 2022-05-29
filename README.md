@@ -10,7 +10,7 @@
 
 ## Running examples 
 ### Featured Section  
-![image](https://user-images.githubusercontent.com/64340009/170858320-3cfaa586-b57f-4977-9e26-b3844a9c319d.png)
+![image](https://user-images.githubusercontent.com/64340009/170860287-95b3c02e-f631-40e4-bd6e-c714ed9044b2.png)
 
 
 #### still in progress :) 
