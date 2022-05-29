@@ -10,7 +10,10 @@
 
 ## Running examples 
 ### Featured Section  
-![image](https://user-images.githubusercontent.com/64340009/170860287-95b3c02e-f631-40e4-bd6e-c714ed9044b2.png)
+![image](https://user-images.githubusercontent.com/64340009/170860287-95b3c02e-f631-40e4-bd6e-c714ed9044b2.png)  
+
+### Sliders for Genres
+![image](https://user-images.githubusercontent.com/64340009/170887469-46419de5-0176-4897-b612-a121cc7d0f96.png)
 
 
 #### still in progress :) 
