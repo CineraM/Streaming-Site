@@ -12,7 +12,10 @@ export default function List(props) {
   // };
 
 
-  
+  var action = [
+    "Fullmetal Alchemist: Brotherhood",
+    "https://cdn.myanimelist.net/images/anime/7/74317l.jpg?_gl=1*1icm7kf*_ga*NDEyMDgyMDc0LjE2NTAzNDE4MDQ.*_ga_26FEP9527K*MTY1Mzg1MDE1Ni42OC4xLjE2NTM4NTAxNzYuNDA." 
+  ];
   return (
     <div className='list'>
       
@@ -21,22 +24,14 @@ export default function List(props) {
         </span>
       
           <div className="poster_row">
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
-              <Listitem/>
+              <Listitem title = {props.data[0][0]} poster={props.data[0][1]}/>
+              <Listitem title = {props.data[1][0]} poster={props.data[1][1]}/>
+              <Listitem title = {props.data[2][0]} poster={props.data[2][1]}/>
+              <Listitem title = {props.data[3][0]} poster={props.data[3][1]}/>
+              <Listitem title = {props.data[4][0]} poster={props.data[4][1]}/>
+              <Listitem title = {props.data[5][0]} poster={props.data[5][1]}/>
+              <Listitem title = {props.data[6][0]} poster={props.data[6][1]}/>
+              <Listitem title = {props.data[7][0]} poster={props.data[7][1]}/>
           </div>
     </div>
   )

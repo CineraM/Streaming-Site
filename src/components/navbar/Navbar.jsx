@@ -28,7 +28,7 @@ const Navbar = () => {
           
           <div className="left">
             <img 
-              src="https://i.imgur.com/05GAunB.png" 
+              src="https://i.imgur.com/C9YJkX6.png" 
               alt=""
               onClick={() => navigate("/login")} 
             />
@@ -40,7 +40,9 @@ const Navbar = () => {
               onClick={() => navigate("/anime")}
             >
               Series</span>
-            <span>Movies</span>
+            <span
+             onClick={() => navigate("/register")}
+            >Movies</span>
             <span>Trending</span>
           </div>
 

@@ -1,4 +1,4 @@
-.featured{
+.aniheader{
     height: 90vh;
     &.vertical{ // if vertical increase image size
         height: 60vh;
@@ -8,50 +8,6 @@
     position: relative;
     overflow: hidden;   // video edges dont bleed out of the bottom of the video/image
 
-    .category{
-        z-index: 900;
-        position: absolute;
-        top: 10%;
-        right: 5%;
-        font-size: 30px;
-        font-weight: 500;
-        color: white;
-        text-shadow: 3px 3px var(--main-color);
-        display: flex;
-        align-items: right;
-
-        &.vertical{ // if vertical increase image size
-            font-size: 20px;
-        }
-
-        .genres{
-            cursor: pointer;
-            background-color: var(--main-color);
-
-            font-size: 15px;
-            border: 2px solid #FF4C29;
-            border-radius: 2px;
-            outline:0px;
-            color: white;
-
-            margin-left: 20px;
-            
-            padding: 5px;
-            &.vertical{ // if vertical increase image size
-                padding: 2px;
-            }
-        }
-
-        .genres::after{
-            border: 2px solid #FF4C29;
-
-        }
-
-        .genres::before{
-            border: 2px solid #FF4C29;
-
-        }
-    }
     
     video {
         object-fit: cover;
@@ -99,11 +55,11 @@
 
         .title{
             &.vertical{ 
-                font-size: 3.7vh;
+                font-size: 3.5vh;
             }
             margin-left: 50px;
             margin-right: 55px;
-            font-size: 5.4vw;
+            font-size: 5.0vw;
             text-shadow: 5px 5px var(--main-color);
         }
 
@@ -115,46 +71,29 @@
             margin-left: 50px;
             margin-right: 55px;
 
-            font-size: 1.1vw;
+            font-size: 1.3vw;
 
             max-width: 90%;
             text-shadow: 2px 2px var(--main-color);
         }
 
-        // .related{
-        //     padding-top: 10px;
-        //     margin-left: 50px;
+        .details{
+            padding-top: 10px;
+            margin-left: 50px;
 
-        //     font-size: 1.0vw;
+            color: #FF4C29;
+            list-style: inside;
+            font-size: 1.0vw;
+            text-shadow: 2px 2px var(--main-color);
+            font-weight: bold;
 
-        //     max-width: 90%;
-        //     text-shadow: 2px 2px var(--main-color);
+            max-width: 90%;
+            
 
-        //     &.vertical{ 
-        //         font-size: 1.2vh;
-        //     }
-        // }
-
-        // .r_links{
-        //     left: 50px;
-        //     margin-left: 0px;
-
-        //     color: #FF4C29;
-        //     list-style: inside;
-        //     font-size: 1.0vw;
-        //     text-decoration: underline;
-        //     text-shadow: 1px 1px var(--main-color);
-        //     font-weight: bold;
-
-        //     &.vertical{ 
-        //         font-size: 1.1vh;
-        //     }
-
-        //     .link{
-        //         margin-left: 10px;
-        //         cursor: pointer;
-        //     }
-        // }
+            &.vertical{ 
+                font-size: 1.6vw;
+            }
+        }
 
         .buttons{
             display: flex;
@@ -178,12 +117,6 @@
                 margin-right: 10px;
                 cursor: pointer;
 
-                &.play-btn{
-                    background-color: #FF4C29;
-                    border: 3px solid var(--main-color);
-                    color: white; 
-                    transition-duration: 0.4s;
-                }
 
                 &.more-btn{
                     background-color: var(--main-color);
@@ -198,12 +131,6 @@
         }
 
     }
-}
-
-
-.play-btn:hover{   
-    transform: scale(1.1);
-    opacity: 1;
 }
 
 .more-btn:hover{

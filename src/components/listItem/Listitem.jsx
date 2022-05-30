@@ -2,20 +2,20 @@ import { AddOutlined, PlayArrowOutlined, ThumbDownAltOutlined, ThumbUpOutlined }
 import './listitem.scss'
 // import React, { useState } from 'react';
 
-export default function Listitem() {
+export default function Listitem(props) {
   // const [isHover, setIsHover] = useState(false);
   // {isHover && (html stuff here)}
   
   return (
     <div className='listItem'>
         <img
-            src="https://cdn.myanimelist.net/images/anime/1813/105367l.jpg?_gl=1*1ihd1ya*_ga*NDEyMDgyMDc0LjE2NTAzNDE4MDQ.*_ga_26FEP9527K*MTY1MzAwOTAyNS4zOC4xLjE2NTMwMTE4OTUuMzU." 
+            src={props.poster}
             alt="" 
         />
 
         <div className='itemInfo'>
         <div className='title'>
-            Haikyuu!! To the Top
+            {props.title}
           </div>
           <div className="icons">
             <PlayArrowOutlined className='icon'/>
