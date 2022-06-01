@@ -57,7 +57,7 @@ export default function Anime() {
         <Anicontent/>
 
 
-        <List title="Related Series" data={action}/>
+        <List title="Recommended" data={action}/>
         <br />
         <Footer/>
        

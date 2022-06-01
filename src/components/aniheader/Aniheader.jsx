@@ -1,5 +1,6 @@
-import { AddOutlined, Info, PlayArrow, ThumbDownAltOutlined, ThumbUpOutlined } from "@material-ui/icons"
+import { AddOutlined, ThumbDownAltOutlined, ThumbUpOutlined } from "@material-ui/icons"
 import { useState } from 'react'
+import Anicontent from "../anicontent/Anicontent"
 import "./aniheader.scss"
 
 // harcoded variable
@@ -80,6 +81,7 @@ export default function Aniheader() {
       </div>
 
     </div>
+    
 </div>
   )
 }

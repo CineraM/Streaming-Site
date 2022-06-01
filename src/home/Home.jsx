@@ -47,6 +47,8 @@ var action = [
 
   ]
 ];
+
+
 const Home = () => {
   return (
     <div className='home'>

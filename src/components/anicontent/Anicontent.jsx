@@ -15,9 +15,17 @@ export default function Anicontent() {
 
         <div className="container">
 
+          <div className="right">
+
+            <video 
+            controls  
+              src= {select}  // passing a javascript variable
+            />
+          </div>
+
           <div className='left'>
             <select className='themes' onChange={e=>setSelect(e.target.value)}>
-              <option value="none" selected disabled hidden>Select an Episode</option>
+              <option value="none" selected disabled hidden>Select Episode</option>
               <option value="https://staging.animethemes.moe/video/KaguyaSamaWaKokurasetaiS2-OP1-NCBD1080.webm">
                 Episode 1</option>
               <option value="https://staging.animethemes.moe/video/KimetsuNoYaibaYuukakuHen-OP1-NCBD1080.webm">
@@ -30,15 +38,6 @@ export default function Anicontent() {
               </option>
             </select>
           </div>
-
-          <div className="right">
-
-            <video 
-            controls  
-              src= {select}  // passing a javascript variable
-            />
-          </div>
-
 
 
 

@@ -47,7 +47,5 @@ for item in data:
         # if the id was already found, just add the theme
         database[current_id]['links'].append(item['mirrors'][0]['mirror'])
 
-print(database)
-
 with open('database.json', 'w') as f:
     json.dump(database, f)

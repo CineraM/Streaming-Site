@@ -1,4 +1,4 @@
-import { AddOutlined, Info, PlayArrow, ThumbDownAltOutlined, ThumbUpOutlined } from "@material-ui/icons"
+import { AddOutlined, PlayArrow, ThumbDownAltOutlined, ThumbUpOutlined } from "@material-ui/icons"
 import { useState } from 'react'
 import "./featured.scss"
 
