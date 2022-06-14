@@ -9,7 +9,7 @@ export default function Logincontent() {
 
     const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
-    let navigate = useNavigate();
+    let navigate = useNavigate()
 
     async function loginUser(event) {
         
@@ -42,6 +42,7 @@ export default function Logincontent() {
 
     useEffect(() => {
         if (token) {
+            console.log('WHAT?')
             navigate('/home')
         }
         else

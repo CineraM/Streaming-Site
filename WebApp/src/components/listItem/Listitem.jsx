@@ -23,8 +23,6 @@ export default function Listitem(props) {
             <ThumbUpOutlined className='icon'/>
             <ThumbDownAltOutlined className='icon'/>
           </div>
-
-          
           
       </div>
     </div>

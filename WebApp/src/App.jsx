@@ -3,6 +3,7 @@ import Home from "./home/Home";
 import Anime from "./anime/Anime";
 import Login from "./login/Login";
 import Register from "./register/Register";
+import Settings from "./settings/Settings";
 
 import {
   BrowserRouter as Router,
@@ -26,6 +27,8 @@ function App(){
         <Route path="/login" element={<Login /> } />
 
         <Route path="/register" element={<Register /> } />
+
+        <Route path="/settings" element={<Settings /> } />
 
         <Route path="/admin_dashboard" element={<div>ADMIN DASHBOARD</div> } />
 

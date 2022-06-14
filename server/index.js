@@ -22,6 +22,7 @@ const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
 const User = require('./models/user.model')
+const Anime = require('./models/anime.model')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
@@ -79,6 +80,86 @@ app.post('/api/login', async (req, res) => {
 })
 
 
+// app.get('/api/anime', async (res) => {
+
+// 	const action_anime = await Anime.find({
+// 		genres: 'action',
+// 	})
+
+// 	res.json.stringify({
+// 		actionList: action_anime
+// 	})
+// })
+
+app.get('/api/action', function (req, res){
+	
+	Anime.find({ genres: 'Action' })
+		.then((result) => {
+			res.send(result)
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+})
+
+app.get('/api/drama', function (req, res){
+	
+	Anime.find({ genres: 'Drama' })
+		.then((result) => {
+			res.send(result)
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+})
+
+app.get('/api/adventure', function (req, res){
+	
+	Anime.find({ genres: 'Adventure' })
+		.then((result) => {
+			res.send(result)
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+})
+
+app.get('/api/comedy', function (req, res){
+	
+	Anime.find({ genres: 'Comedy' })
+		.then((result) => {
+			res.send(result)
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+})
+
+app.get('/api/sports', function (req, res){
+	
+	Anime.find({ genres: 'Sports' })
+		.then((result) => {
+			res.send(result)
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+})
+
+
+app.get('/api/movies', function (req, res){
+	
+	Anime.find({ genres: 'Avant Garde' })
+		.then((result) => {
+			res.send(result)
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+})
+
+
 app.listen(1337, () => {
 	console.log('Server started on 1337')
 })
+
