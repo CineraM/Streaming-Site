@@ -8,7 +8,30 @@ While developing the website, I created 2 different applications. A react applic
 ### Package Manager 
      npm install --global yarn
 
-## Server  
+## Express Server  
+### Server Dependencies
+     yarn add express
+     yarn add nodemon
+     yarn add cors
+     yarn add mongoose
+     yarn add jsonwebtoken
+     yarn add bcryptjs
+     
+### Run server
+     yarn init  # only the first time
+     yarn dev
+
+
+## React WebApp
+### WebApp Dependencies
+     yarn add sass
+     yarn add yarn add @material-ui/icons @material-ui/core
+     yarn add react-router-dom
+     yarn add mongoose
+     yarn add helmet
+     yarn add jwt-decode
+     https://fonts.google.com/specimen/Roboto#standard-styles  
+     ^^^ Google fonts
 
 
 # MongoDB data
