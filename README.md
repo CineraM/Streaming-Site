@@ -1,5 +1,6 @@
-# Mock Anime Streaming-Site
-Objective: Replicate a streaming site with anime oriented content.  
+# Anime Streaming-Site
+Objective: Replicate a streaming site with anime oriented content. 
+**MOCK SITE, WILL NOT BE DEPLOYED**
 
 ## Stack: MongoDB - Express - React - Node
 
