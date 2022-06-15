@@ -1,5 +1,10 @@
 # Mock Anime Streaming-Site
-I wanted to replicate an anime Streaming Site with NodeJS and React. The website uses a DBMS to acces series/movie data. All images and videos will be obtained using JikanV4(MyAnimeList unofficial API) and Hyper links to https://staging.animethemes.moe (Website that hosts Anime Themes).
+Objective: replicate an anime Streaming.  
+
+## Stack: MongoDB - Express - React - Node
+
+
+The website uses a DBMS to acces series/movie data. All images and videos will be obtained using JikanV4(MyAnimeList unofficial API) and Hyper links to https://staging.animethemes.moe (Website that hosts Anime Themes).
 ### Role-based access - User's and Admins have different dashboards.  
 ### Doing this to learning NodeJS & React along the way!  
 
