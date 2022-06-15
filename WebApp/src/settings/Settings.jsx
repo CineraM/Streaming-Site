@@ -5,35 +5,35 @@ import { useState } from 'react';
 
 export default function Settings() {
 
-  const [aniId, setAniId] = useState(5114)
+  const [featured, setFeatured] = useState([])
 
-    async function fetchList() 
-    {
-        try 
+  useEffect(() => {
+
+    // Query and store genres
+      async function getFeatured() 
+      {
+        async function fetchFeatured() 
         {
-
-          const response = await fetch('http://localhost:1337/api/anime', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              aniId,
-            }),
-          });
-
-          const mylist = await response.json();
-          console.log(mylist)
-          return mylist;
-        } 
-        catch (error) 
-        {
-            console.log('ERRORRASRGHSDRG')
-            console.error(error);
+            try {
+                const response = await fetch(`http://localhost:1337/api/featured`, {
+                  method: 'GET',
+                  
+                });
+                const mylist = await response.json();
+                console.log(mylist)
+                return mylist;
+            } 
+            catch (error) {console.error(error);}
         }
-    }
 
-    fetchList()
+          const featuredList = await fetchFeatured("Comedy");
+          setFeatured(featuredList);
+      }
+
+      getFeatured()
+      
+
+  }, [])
     return (
     <h1>fuck this </h1>
   )

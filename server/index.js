@@ -23,6 +23,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const User = require('./models/user.model')
 const Anime = require('./models/anime.model')
+const Featured = require('./models/featured.model')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
@@ -90,6 +91,31 @@ app.post('/api/anime', async (req, res) => {
 	})
 })
 
+app.post('/api/animeGenres', async (req, res) => {
+
+	Anime.find({ genres: req.body.genre })
+	.then((result) => {
+		res.send(result)
+	})
+	.catch((err) => {
+		console.log(err)
+	})
+})
+
+app.get('/api/featured', function (req, res){
+	
+	Featured.find()
+		.then((result) => {
+			res.send(result)
+		})
+		.catch((err) => {
+			console.log(err)
+		})
+})
+
+
+
+// DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS
 app.get('/api/action', function (req, res){
 	
 	Anime.find({ genres: 'Action' })
@@ -156,7 +182,7 @@ app.get('/api/movies', function (req, res){
 			console.log(err)
 		})
 })
-
+// DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS
 
 app.listen(1337, () => {
 	console.log('Server started on 1337')

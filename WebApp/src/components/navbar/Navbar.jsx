@@ -29,6 +29,8 @@ const Navbar = () => {
     return() => (window.onscroll = null);
   };
 
+  window.scrollTo(0, 0)
+
   //debug, delete later
   // console.log(isScrolled)
 

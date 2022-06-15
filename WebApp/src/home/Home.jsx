@@ -21,19 +21,20 @@ const Home = () => {
   let navigate = useNavigate();
   
   useEffect(() => {
+
     // user validation
     if (token) {
     
       const user = jwt(token)
       if (!user) {
-        console.log('jkhg')
+        // console.log('jkhg')
         localStorage.removeItem('token')
         navigate('/login')
       }
     }
     else
     {
-      console.log('asdasd')
+      // console.log('asdasd')
       localStorage.removeItem('token')
       navigate('/login')
     }
@@ -41,35 +42,43 @@ const Home = () => {
     // Query and store genres
       async function getLists() 
       {
-
         async function fetchList(list) 
         {
+          // setGenre(list)
+          const genre = list
             try {
-                const response = await fetch(`http://localhost:1337/api/${list}`, {
-                    method: 'GET'
+                const response = await fetch(`http://localhost:1337/api/animeGenres`, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({
+                    genre,
+                  }),
                 });
                 const mylist = await response.json();
+                // console.log(mylist)
                 return mylist;
             } 
             catch (error) {console.error(error);}
         }
         
-          const actionList = await fetchList("action");
+          const actionList = await fetchList("Action");
           setAction(actionList);
 
-          const sportsList = await fetchList("sports");
+          const sportsList = await fetchList("Sports");
           setSports(sportsList)
 
-          const dramaList = await fetchList("drama");
+          const dramaList = await fetchList("Drama");
           setDrama(dramaList);
 
-          const comedyList = await fetchList("comedy");
+          const comedyList = await fetchList("Comedy");
           setComedy(comedyList);
 
-          const adventureList = await fetchList("adventure");
+          const adventureList = await fetchList("Adventure");
           setAdventure(adventureList);
 
-          const moviesList = await fetchList("movies");
+          const moviesList = await fetchList("Avant Garde");
           setMovies(moviesList);
 
           return actionList; 
@@ -91,10 +100,10 @@ const Home = () => {
       <br/>
 
       <List title="Action" data={action} isInAnime={false}/>
-      <List title="Sports" data={sports} isInAnime={false}/>
       <List title="Drama" data={drama} isInAnime={false}/>
-      <List title="Comedy" data={comedy} isInAnime={false}/>
       <List title="Adventure" data={adventure} isInAnime={false}/>
+      <List title="Comedy" data={comedy} isInAnime={false}/>
+      <List title="Sports" data={sports} isInAnime={false}/>
       <List title="Movies" data={movies} isInAnime={false}/>
 
       
@@ -105,3 +114,17 @@ const Home = () => {
 }
 
 export default Home
+
+
+
+        // async function fetchList(list) 
+        // {
+        //     try {
+        //         const response = await fetch(`http://localhost:1337/api/${list}`, {
+        //             method: 'GET'
+        //         });
+        //         const mylist = await response.json();
+        //         return mylist;
+        //     } 
+        //     catch (error) {console.error(error);}
+        // }

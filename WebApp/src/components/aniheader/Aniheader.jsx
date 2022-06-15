@@ -14,7 +14,6 @@ export default function Aniheader(props) {
   const aniId = localStorage.getItem('LS_ID')
   // console.log(aniData.links[0])
 
-  // if the page offset is larger than 0, unblur the navbar
   window.onresize = () =>{
   // let aspectRatio = window.innerWidth/window.innerHeight;
     setIsVertical(window.innerWidth/window.innerHeight < 1 ? true : false);
@@ -23,6 +22,8 @@ export default function Aniheader(props) {
 
 
   useEffect(() => {
+    setIsVertical(window.innerWidth/window.innerHeight < 1 ? true : false);
+
     async function fetchAniData() 
     {
         try 
@@ -54,6 +55,7 @@ export default function Aniheader(props) {
 
     }
     getAniData()
+    // eslint-disable-next-line
   }, [])
 
   try {
