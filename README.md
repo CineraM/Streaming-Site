@@ -32,6 +32,9 @@ While developing the website, I created 2 different applications. A react applic
      yarn add jwt-decode
      https://fonts.google.com/specimen/Roboto#standard-styles  
      ^^^ Google fonts
+### Run WebApp
+     yarn init  # only the first time
+     yarn dev
 
 
 # MongoDB data
@@ -58,13 +61,6 @@ I wrote Python scripts to fetch the data and build the MongoDB Database.
 ```
 
 
-### Role-based access - User's and Admins have different dashboards.  
-### 
-
-### Application Dependencies
-     npm install --global yarn
-     yarn add sass
-     yarn add @material-ui/icons @material-ui/core
 
 ## Running examples 
 ### Featured Section  
