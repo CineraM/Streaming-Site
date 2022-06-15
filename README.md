@@ -3,8 +3,12 @@ Objective: Replicate a streaming site with anime oriented content.
 
 ## Stack: MongoDB - Express - React - Node
 
-While developing the website, I created 2 different applications. A react application for the front-end, and an Express server that works as an API to Fetch data from the database.  
-### Server  
+While developing the website, I created 2 different applications. A react application to handle the front-end, and an Express server that works as an API to Fetch data from the database.  
+  
+### Package Manager 
+     npm install --global yarn
+
+## Server  
 
 
 # MongoDB data
