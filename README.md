@@ -3,12 +3,13 @@ Objective: Replicate a streaming site - used anime oriented content.
 
 ## Stack: MongoDB - Express - React - Node
 
+While developing the website, I created 2 different applications. A react application for the front-end, and an Express server that works as an API to Fetch data from the database.  
 ### Server  
 
 
 # MongoDB data
 Most information about Anime entries in the database were obtained using JikanV4(MyAnimeList unofficial API). For the video entries I used hyperlinks to https://staging.animethemes.moe (Website that hosts Anime Themes).  
-I wrote Python scripts to fetch the data and build the Database.
+I wrote Python scripts to fetch the data and build the MongoDB Database.
 
 ### Python Scripts Dependencies
      pip install requests
