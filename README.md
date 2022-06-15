@@ -27,7 +27,7 @@ I wrote Python scripts to fetch the data and build the Database.
 │   ├── popular_anime.py       # Creates the topAniIds.json File
 │   ├── themesdb.json          # Json File containing all staging.moe links 
 │   └── topAniIds.json         # Store the top Anime Ids of MyAnimeList.com
-
+```
 
 
 ### Role-based access - User's and Admins have different dashboards.  
