@@ -1,4 +1,4 @@
-# Anime Streaming-Site
+# Anime Streaming Site
 Objective: Replicate a streaming site with anime oriented content. 
 **MOCK SITE, WILL NOT BE DEPLOYED**
 
