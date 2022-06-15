@@ -79,17 +79,16 @@ app.post('/api/login', async (req, res) => {
 	}
 })
 
+app.post('/api/anime', async (req, res) => {
 
-// app.get('/api/anime', async (res) => {
-
-// 	const action_anime = await Anime.find({
-// 		genres: 'action',
-// 	})
-
-// 	res.json.stringify({
-// 		actionList: action_anime
-// 	})
-// })
+	Anime.findOne({ id: req.body.aniId })
+	.then((result) => {
+		res.send(result)
+	})
+	.catch((err) => {
+		console.log(err)
+	})
+})
 
 app.get('/api/action', function (req, res){
 	

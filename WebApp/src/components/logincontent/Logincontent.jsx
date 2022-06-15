@@ -5,6 +5,7 @@ import "./logincontent.scss"
 export default function Logincontent() {
     const token = localStorage.getItem('token')
 
+    localStorage.setItem('LS_ID', '19')
     localStorage.setItem('user_name', 'sample')
 
     const [email, setEmail] = useState('')

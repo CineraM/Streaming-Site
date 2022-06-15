@@ -14,7 +14,7 @@ const Navbar = () => {
 
   // navigate
   let navigate = useNavigate();
-  
+
 
   const query_name = localStorage.getItem('user_name')
   const name = query_name.charAt(0).toUpperCase() + query_name.slice(1);
@@ -30,7 +30,7 @@ const Navbar = () => {
   };
 
   //debug, delete later
-  console.log(isScrolled)
+  // console.log(isScrolled)
 
   // Use the bool variable to determine what to pass into the xml
   return (
@@ -47,10 +47,13 @@ const Navbar = () => {
             onClick={() => navigate("/home")}>
               Homepage 
             </span>
-            <span
-              onClick={() => navigate("/anime")}
+            {/* <span
+              onClick={() => {
+                localStorage.setItem('LS_ID', '47778')
+                navigate("/anime")
+              }}
             >
-              Series</span>
+              Series</span> */}
             {/* <span
              onClick={() => navigate("/register")}
             >Movies</span>

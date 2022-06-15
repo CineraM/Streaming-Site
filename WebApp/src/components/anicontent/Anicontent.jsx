@@ -1,47 +1,94 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./anicontent.scss"
 
 
-
-var bg_link = ""
-
-export default function Anicontent() {
+export default function Anicontent(props) {
    
   const[select, setSelect] = useState();
-  return (
 
+  // const [aniId, setAniId] = useState(5114)
+  const [aniData, setAniData] = useState([])
+  const aniId = localStorage.getItem('LS_ID')
 
-    <div className="anicontent">
+  async function fetchAniData() 
+  {
+      try 
+      {
 
-        <div className="container">
+        const response = await fetch('http://localhost:1337/api/anime', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            aniId,
+          }),
+        });
 
-          <div className="right">
+        const mylist = await response.json();
+        // console.log(mylist)
+        return mylist;
+      } 
+      catch (error) 
+      {
+          console.log('ERROR')
+          console.error(error);
+      }
+  }
 
-            <video 
-            controls  
-              src= {select}  // passing a javascript variable
-            />
+  useEffect(() => {
+    async function getAniData() 
+    {  
+      const aniDataList = await fetchAniData();
+      setAniData(aniDataList)
+    }
+
+    getAniData()
+  }, [])
+
+ 
+  try {
+    return (
+
+      <div className="anicontent">
+  
+          <div className="container">
+  
+            <div className="right">
+  
+              <video 
+              controls  
+                src= {select}  // passing a javascript variable
+              />
+            </div>
+  
+            <div className='left'>
+              <select className='themes' onChange={e=>setSelect(e.target.value)}>
+                <option value="none" selected disabled hidden>Select Episode</option>
+  
+                {aniData.links.map(lists => {
+                return (
+                  <option 
+                    value={lists}>
+                    Episode {aniData.links.indexOf(lists) + 1}
+                  </option>
+                  )
+                })}
+              </select>
+            </div>
+  
+  
           </div>
+      </div>
+    )
+  } catch (error) {
+    return (
 
-          <div className='left'>
-            <select className='themes' onChange={e=>setSelect(e.target.value)}>
-              <option value="none" selected disabled hidden>Select Episode</option>
-              <option value="https://staging.animethemes.moe/video/KaguyaSamaWaKokurasetaiS2-OP1-NCBD1080.webm">
-                Episode 1</option>
-              <option value="https://staging.animethemes.moe/video/KimetsuNoYaibaYuukakuHen-OP1-NCBD1080.webm">
-                Episode 2</option>
-              <option value="https://staging.animethemes.moe/video/FullmetalAlchemistBrotherhood-OP2.webm">
-                Episode 3
-              </option>
-              <option value="https://staging.animethemes.moe/video/RakugoShinju-OP1.webm">
-                Episode 4
-              </option>
-            </select>
-          </div>
+      <div className="anicontent">
+        meh
+      </div>
+    ) 
+  }
 
 
-
-        </div>
-    </div>
-  )
 }

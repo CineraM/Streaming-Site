@@ -27,7 +27,7 @@ export default function List(props) {
 
           {props.data.map(lists => {
             return (
-                <Listitem title = {lists.title} poster={lists.images}/>
+                <Listitem title = {lists.title} poster={lists.images} aniId={lists.id} isAnime={props.isInAnime}/>
             )
           })}
 

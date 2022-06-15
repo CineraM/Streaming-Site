@@ -5,42 +5,76 @@ import { useState } from 'react';
 
 export default function Settings() {
 
-    const [action, setAction] = useState([])
-    const [drama, setDrama] = useState([])
-    const [adventure, setAdventure] = useState([])
-    const [comedy, setComedy] = useState([])
-    const [sports, setSports] = useState([])
-    const [movies, setMovies] = useState([])
+  const [aniId, setAniId] = useState(5114)
 
     async function fetchList() 
     {
         try 
         {
-            const response = await fetch(`http://localhost:1337/api/action`, 
-            {
-                method: 'GET'
-            });
-            const mylist = await response.json();
-            return mylist;
+
+          const response = await fetch('http://localhost:1337/api/anime', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              aniId,
+            }),
+          });
+
+          const mylist = await response.json();
+          console.log(mylist)
+          return mylist;
         } 
         catch (error) 
         {
+            console.log('ERRORRASRGHSDRG')
             console.error(error);
         }
     }
 
-    useEffect(() => {
-        async function getList() 
-        {
-            const mylist = await fetchList();
-            setAction(mylist);
-            return mylist; 
-        }
+    fetchList()
+    return (
+    <h1>fuck this </h1>
+  )
+}
 
-        getList()
-    }, [action])
+    // const [action, setAction] = useState([])
+    // const [drama, setDrama] = useState([])
+    // const [adventure, setAdventure] = useState([])
+    // const [comedy, setComedy] = useState([])
+    // const [sports, setSports] = useState([])
+    // const [movies, setMovies] = useState([])
 
-    console.log(action)
+    // async function fetchList() 
+    // {
+    //     try 
+    //     {
+    //         const response = await fetch(`http://localhost:1337/api/action`, 
+    //         {
+    //             method: 'GET'
+    //         });
+    //         const mylist = await response.json();
+    //         return mylist;
+    //     } 
+    //     catch (error) 
+    //     {
+    //         console.error(error);
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     async function getList() 
+    //     {
+    //         const mylist = await fetchList();
+    //         setAction(mylist);
+    //         return mylist; 
+    //     }
+
+    //     getList()
+    // }, [action])
+
+    // console.log(action)
 
     // fetch('http://localhost:1337/api/action')
     //     .then(res => res.json())
@@ -72,24 +106,6 @@ export default function Settings() {
 
     
     // console.log(action)
-
-    return (
-    <h1>fuck this </h1>
-  )
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
