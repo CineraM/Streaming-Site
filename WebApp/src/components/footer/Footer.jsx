@@ -3,7 +3,7 @@ import "./footer.scss"
 export default function Footer() {
 
   const handleClick = () => {
-    window.open("https://github.com/CineraM");
+    window.open("https://github.com/CineraM/Streaming-Site");
   };
 
   return (

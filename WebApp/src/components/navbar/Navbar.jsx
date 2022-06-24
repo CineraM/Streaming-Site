@@ -12,6 +12,10 @@ const Navbar = () => {
     navigate('/login')
 	}  
 
+  function settings() 
+  {
+    navigate('/settings')
+	}  
   // navigate
   let navigate = useNavigate();
 
@@ -74,9 +78,9 @@ const Navbar = () => {
               <ArrowDropDown className='icon'/>
               <div className="options">
 
-                <span>Setting</span>
+                <span className='settings-btn' onClick={settings}>Setting</span>
 
-                <span onClick={lougout}>Logout</span>
+                <span className='logout-btn' onClick={lougout}>Logout</span>
                 {/* onClick={lougout} */}
               </div>
             </div>

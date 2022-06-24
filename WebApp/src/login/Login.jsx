@@ -1,16 +1,18 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React, { useEffect } from 'react'
 import Logincontent from "../components/logincontent/Logincontent"
 import "./login.scss"
 
 
 export default function Login() {
+
+  useEffect(() => {
+    document.title = "Ani-Fox"
+  
+  }, [])
+  
   return (
     
-    <div class="login">
-        <Helmet>
-          <title>{ "Ani-Fox" }</title>
-        </Helmet>
+    <div className="login">
         <Logincontent />
     </div>
   )

@@ -4,7 +4,7 @@ import "./anicontent.scss"
 
 export default function Anicontent(props) {
    
-  const[select, setSelect] = useState();
+  const[select, setSelect] = useState('');
 
   // const [aniId, setAniId] = useState(5114)
   const [aniData, setAniData] = useState([])
@@ -44,6 +44,7 @@ export default function Anicontent(props) {
     }
 
     getAniData()
+    // eslint-disable-next-line
   }, [])
 
  
@@ -63,17 +64,19 @@ export default function Anicontent(props) {
             </div>
   
             <div className='left'>
-              <select className='themes' onChange={e=>setSelect(e.target.value)}>
-                <option value="none" selected disabled hidden>Select Episode</option>
+              <select className='themes' onChange={e=>setSelect(e.target.value)} defaultValue="none">
+                <option value="none" disabled hidden>Select Episode</option>
   
-                {aniData.links.map(lists => {
+                {aniData.links.map((lists, i) => {
                 return (
                   <option 
+                    key={i}
                     value={lists}>
                     Episode {aniData.links.indexOf(lists) + 1}
                   </option>
                   )
                 })}
+                
               </select>
             </div>
   
@@ -85,7 +88,7 @@ export default function Anicontent(props) {
     return (
 
       <div className="anicontent">
-        meh
+        This should not load
       </div>
     ) 
   }

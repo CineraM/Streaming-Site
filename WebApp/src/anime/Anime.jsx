@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Helmet from 'react-helmet'
 import Anicontent from '../components/anicontent/Anicontent'
 import Footer from '../components/footer/Footer'
 import Navbar from '../components/navbar/Navbar'
@@ -30,6 +29,8 @@ export default function Anime() {
   }
   
 	useEffect(() => {
+    document.title = "Ani-Fox"
+    window.scrollTo(0, 0) 
     async function getLists() 
     {   
       const tempList = await fetchList("action");
@@ -37,28 +38,24 @@ export default function Anime() {
     }
 
     getLists()
-    window.scrollTo(0, 0) 
+    
     if (token) {
       const user = jwt(token)
       if (!user) {
-        console.log('jkhg')
         localStorage.removeItem('token')
         navigate('/login')
       }
     }
     else
     {
-      console.log('asdasd')
       localStorage.removeItem('token')
       navigate('/login')
     }
+    // eslint-disable-next-line
 	}, [])
 
   return (
     <div className="anime">
-        <Helmet>
-            <title>{ "Ani-Fox" }</title>
-        </Helmet>
 
         <Navbar/>
         <Aniheader aniId={localStorage.getItem('LS_ID')}/>

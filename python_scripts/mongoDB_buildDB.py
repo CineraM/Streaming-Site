@@ -13,19 +13,16 @@ mydb = client["ani-fox-db"]
 
 aniCollection = mydb["anime"]
 
+# example
 # data = {'name' : 'John' , 'age' : 30}
-
 # aniCollection.insert_one(data)
-
 
 with open('aniDBd.json') as f:
     data = json.load(f)
 
-
 for anime in data.values():
     entry = anime
     aniCollection.insert_one(entry)
-
 
 
 # ani_data = {

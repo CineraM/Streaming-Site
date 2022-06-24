@@ -27,13 +27,11 @@ export default function Listitem(props) {
               onClick={() => {
                 if(props.isAnime)
                 {
-                  console.log('yes')
                   localStorage.setItem('LS_ID', props.aniId)
                   window.location.reload()
                 }
                 else
                 {
-                  console.log('no')
                   localStorage.setItem('LS_ID', props.aniId)
                   navigate("/anime")
                 }

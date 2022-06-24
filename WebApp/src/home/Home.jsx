@@ -3,7 +3,6 @@ import Featured from "../components/featured/Featured"
 import "./home.scss"
 import List from "../components/list/List"
 import Footer from "../components/footer/Footer"
-import { Helmet } from 'react-helmet'
 import React, { useState, useEffect } from "react";
 import jwt from 'jwt-decode'
 import { useNavigate } from "react-router-dom"
@@ -18,13 +17,13 @@ const Home = () => {
   const [movies, setMovies] = useState([])
 
   const token = localStorage.getItem('token')
+
   let navigate = useNavigate();
   
   useEffect(() => {
-
+    document.title = "Ani-Fox"
     // user validation
     if (token) {
-    
       const user = jwt(token)
       if (!user) {
         // console.log('jkhg')
@@ -88,26 +87,22 @@ const Home = () => {
       // eslint-disable-next-line
   }, [])
 
-
-
+  
   return (
     <div className='home'>
-      <Helmet>
-        <title>{ "Ani-Fox" }</title>
-      </Helmet>
-      <Navbar/>
-      <Featured type="series"/>
-      <br/>
 
+      <Navbar/>
+      <Featured/>
+
+      <br/>
       <List title="Action" data={action} isInAnime={false}/>
       <List title="Drama" data={drama} isInAnime={false}/>
       <List title="Adventure" data={adventure} isInAnime={false}/>
       <List title="Comedy" data={comedy} isInAnime={false}/>
       <List title="Sports" data={sports} isInAnime={false}/>
       <List title="Movies" data={movies} isInAnime={false}/>
-
-      
       <br/>
+      
       <Footer/>
     </div>
   )

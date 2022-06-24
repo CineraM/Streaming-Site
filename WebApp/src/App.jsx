@@ -4,6 +4,7 @@ import Anime from "./anime/Anime";
 import Login from "./login/Login";
 import Register from "./register/Register";
 import Settings from "./settings/Settings";
+import Admin from "./admindash/Admindash";
 
 import {
   BrowserRouter as Router,
@@ -30,7 +31,7 @@ function App(){
 
         <Route path="/settings" element={<Settings /> } />
 
-        <Route path="/admin_dashboard" element={<div>ADMIN DASHBOARD</div> } />
+        <Route path="/admin_dashboard" element={<Admin /> } />
 
     </Routes>
   </Router>

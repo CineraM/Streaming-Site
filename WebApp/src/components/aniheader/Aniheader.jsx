@@ -59,7 +59,7 @@ export default function Aniheader(props) {
   }, [])
 
   try {
-    console.log(aniData.links[0])
+    // console.log(aniData.links[0])
 
     return (
       <div className={isVertical ? "aniheader vertical" : "aniheader"}>

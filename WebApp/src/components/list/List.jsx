@@ -1,7 +1,6 @@
 
 // import { ArrowBackIos, ArrowForwardIos } from '@material-ui/icons'
 // import { useRef } from 'react';
-import { ListSharp } from '@material-ui/icons'
 import Listitem from '../listItem/Listitem'
 import './list.scss'
 
@@ -19,31 +18,17 @@ export default function List(props) {
         <span className='listTitle'>
           {props.title}
         </span>
-        <tbody>
-
-        </tbody>
 
         <div className="poster_row">
-
-          {props.data.map(lists => {
+          {/* react props should have unique keys, key={i} solves this "bug" */}
+          {props.data.map((lists, i) => {
             return (
-                <Listitem title = {lists.title} poster={lists.images} aniId={lists.id} isAnime={props.isInAnime}/>
+                <Listitem key={i} title = {lists.title} poster={lists.images} aniId={lists.id} isAnime={props.isInAnime}/>
             )
           })}
 
         </div>
 
-        {/* Hard coded */}
-          {/* <div className="poster_row">
-              <Listitem title = {props.data[0][0]} poster={props.data[0][1]}/>
-              <Listitem title = {props.data[1][0]} poster={props.data[1][1]}/>
-              <Listitem title = {props.data[2][0]} poster={props.data[2][1]}/>
-              <Listitem title = {props.data[3][0]} poster={props.data[3][1]}/>
-              <Listitem title = {props.data[4][0]} poster={props.data[4][1]}/>
-              <Listitem title = {props.data[5][0]} poster={props.data[5][1]}/>
-              <Listitem title = {props.data[6][0]} poster={props.data[6][1]}/>
-              <Listitem title = {props.data[7][0]} poster={props.data[7][1]}/>
-          </div> */}
     </div>
   )
 }

@@ -48,10 +48,11 @@ export default function Registercontent() {
         if (token) {
             navigate('/home')
         }
-        else
-        {
-            console.log("debug")
-        }
+        // else
+        // {
+        //     console.log("debug")
+        // }
+        // eslint-disable-next-line
     },[])
     
   return (
@@ -59,12 +60,12 @@ export default function Registercontent() {
 
         <div className="container">
 
-            <div class="left">
+            <div className="left">
                 <h1>Already a member?</h1>
-                <button class="signUp-btn" onClick={() => navigate("/login")}> Sign In</button>
+                <button className="signUp-btn" onClick={() => navigate("/login")}> Sign In</button>
             </div>
 
-            <div class="right">
+            <div className="right">
                 <form onSubmit={registerUser}>
                     <img src="https://i.imgur.com/C9YJkX6.png" alt="" />
                     <br />
@@ -99,10 +100,7 @@ export default function Registercontent() {
                 </form>
             </div>
 
-
-
         </div>
-
 
     </div>
   )
