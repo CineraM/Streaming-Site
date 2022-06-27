@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import "./admindash.scss"
 import List from "../components/adminlist/Adminlist"
 
+let temp = {}
 
 export default function Admindash() {
 
@@ -90,9 +91,6 @@ export default function Admindash() {
     try {
         return (
             <div className='admin'>
-                <h1 className='outert'>Stats</h1>
-
-                <br></br>
                 <br></br>
                 <h1 className='outert'>Change Featured</h1>
                 <div className='change-featured'>

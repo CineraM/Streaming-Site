@@ -10,20 +10,39 @@
 
     img{
         height: 280px;
+        position: relative;
         //width: 100%;
         //object-fit: contain;
     }
 
-    .centered{
+    .newfeat{
         position: absolute;
         text-indent: -9999px;
-        color: white;
+        color: #FF4C29;
         text-shadow: 2px 2px black;
-        font-size: 20px;
-        top: 50%;
+        font-size: 24px;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
+    }
+
+    .wrapper{
+        position: relative;
+        text-align: center;
+    }
+
+    .likes{
+        color: #FF4C29;
+        text-shadow: 3px 3px black;
+        font-size: 24px;
+        text-indent: 0px;
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
     }
 
     .title{
@@ -41,23 +60,17 @@
 .admin-listItem:hover{
     img{
         filter:brightness(0.5);
-        cursor: pointer;
     }
-    .centered{
+    .newfeat{
         text-indent: 0px;
         text-align: center;
-
-
+    }
+    .likes{
+        text-indent: -9999px;
     }
     transform: scale(1.05);
     // opacity: 1;
     // z-index: 10;
-
-    .icon{
-        border: 2px solid #FF4C29;
-        color: white;
-        background-color: var(--main-color);
-    }
     
     overflow: visible;
     // box shadow

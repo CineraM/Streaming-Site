@@ -4,7 +4,7 @@ import './adminlistItem.scss'
 // import { useNavigate } from "react-router-dom"
 // import React, { useState } from 'react';
 
-
+const likes = 12
 
 export default function Listitem(props) {
   let navigate = useNavigate();
@@ -66,12 +66,16 @@ useEffect(() => {
         changeFeatured()
        }} >
       
-      <div className="centered"> New Featured</div>
+      <div className="newfeat"> New Featured </div>
+
+      <div className='wrapper'>
+        <div className="likes"> {likes} likes </div>
+
         <img
             src={props.poster}
-            alt=""
+            alt="" />
+      </div>
 
-        />
 
         <div className='itemInfo'>
         <div className='title'>
