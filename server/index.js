@@ -1,4 +1,3 @@
-
 /*
 
 stuff to add to server branch:
@@ -16,7 +15,6 @@ How to run server:
 
     or "yarn dev"
 */
-
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -111,6 +109,25 @@ app.get('/api/featured', function (req, res){
 		.catch((err) => {
 			console.log(err)
 		})
+})
+
+
+app.post('/api/change_featured', async (req, res) => {
+	const filter = {genres: req.body.genres}
+	const update = {genres: req.body.genres, id: req.body.id, images: req.body.images, 
+		links: req.body.links, synopsis: req.body.synopsis,  title: req.body.title }
+	
+	try {
+		// console.log(update)
+		await Featured.findOneAndUpdate(
+			filter,
+			update,
+		)
+		return res.json({ status: 'ok' })
+	} catch (error) {
+		console.log(error)
+		res.json({ status: 'error', error: 'invalid token' })
+	}
 })
 
 

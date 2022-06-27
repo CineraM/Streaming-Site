@@ -23,7 +23,7 @@ export default function Registercontent() {
         }
 
         event.preventDefault()
-
+        
         const response = await fetch('http://localhost:1337/api/register', {
             method: 'POST',
             headers: {
@@ -48,10 +48,6 @@ export default function Registercontent() {
         if (token) {
             navigate('/home')
         }
-        // else
-        // {
-        //     console.log("debug")
-        // }
         // eslint-disable-next-line
     },[])
     

@@ -2,8 +2,12 @@ const mongoose = require('mongoose')
 
 const Featured = new mongoose.Schema(
 	{
-		genre: { type: String, required: true, unique: true},
+		genres: { type: String, required: true, unique: true},
         id: { type: String, required: true, unique: true},
+		images: { type: String, required: true},
+		links: { type: String, required: true},
+		synopsis: { type: String, required: true},
+		title: { type: String, required: true},
 	},
 	{ collection: 'featured' }
 )

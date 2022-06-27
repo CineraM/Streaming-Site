@@ -90,24 +90,76 @@ export default function Admindash() {
     try {
         return (
             <div className='admin'>
+                <h1 className='outert'>Stats</h1>
+
                 <br></br>
                 <br></br>
+                <h1 className='outert'>Change Featured</h1>
                 <div className='change-featured'>
-                    <div className='action-br'>
-                        <div className='child'>
+
+                    <div className='wrapper'>
+                        <div className='left'>
                             <img src={featured[0].images} alt="" />
+                            
                         </div>
-                        <div className='child2'>
+                        <div className='right'>
                             <List title="Action" data={action} isInAnime={false}/>
                         </div>
-                        
                     </div>
-    
-                    <List title="Drama" data={drama} isInAnime={false}/>
-                    <List title="Adventure" data={adventure} isInAnime={false}/>
-                    <List title="Comedy" data={comedy} isInAnime={false}/>
-                    <List title="Sports" data={sports} isInAnime={false}/>
-                    <List title="Movies" data={movies} isInAnime={false}/>
+
+                    <div className='wrapper'>
+                        <div className='left'>
+                            <img src={featured[1].images} alt="" />
+                            
+                        </div>
+                        <div className='right'>
+                            <List title="Drama" data={drama} isInAnime={false}/>
+                        </div>
+                    </div>
+
+
+                    <div className='wrapper'>
+                        <div className='left'>
+                            <img src={featured[2].images} alt="" />
+                            
+                        </div>
+                        <div className='right'>
+                            <List title="Adventure" data={adventure} isInAnime={false}/>
+                        </div>
+                    </div>
+
+
+
+                    <div className='wrapper'>
+                        <div className='left'>
+                            <img src={featured[3].images} alt="" />
+                            
+                        </div>
+                        <div className='right'>
+                            <List title="Comedy" data={comedy} isInAnime={false}/>
+                        </div>
+                    </div>
+
+                    <div className='wrapper'>
+                        <div className='left'>
+                            <img src={featured[4].images} alt="" />
+                            
+                        </div>
+                        <div className='right'>
+                            <List title="Sports" data={sports} isInAnime={false}/>
+                        </div>
+                    </div>
+
+                    <div className='wrapper'>
+                        <div className='left'>
+                            <img src={featured[5].images} alt="" />
+                            
+                        </div>
+                        <div className='right'>
+                            <List title="Movies" data={movies} isInAnime={false}/>
+                        </div>
+                    </div>
+                    
                 </div>
     
             </div>

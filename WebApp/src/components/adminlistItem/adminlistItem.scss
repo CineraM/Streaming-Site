@@ -1,46 +1,69 @@
 
-// .listItem{
-//     //width: 320px;
-//     //height: 450px;
-//     //overflow-y: hidden;
-//     background-color: var(--main-color);
-//     margin-right: 10px;
-//     cursor: pointer;
-//     transition: transform 450ms;
+.admin-listItem{
+    //width: 320px;
+    //height: 450px;
+    //overflow-y: hidden;
+    background-color: var(--main-color);
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 450ms;
 
-//     img{
-//         height: 280px;
-//         //width: 100%;
-//         //object-fit: contain;
-//     }
+    img{
+        height: 280px;
+        //width: 100%;
+        //object-fit: contain;
+    }
 
-//     .title{
-//         font-size: 15px;
-//         font-style: bold;
-//         color: white;
-//         text-shadow: 3px 3px black;
-//         overflow: auto;
-//     }
+    .centered{
+        position: absolute;
+        text-indent: -9999px;
+        color: white;
+        text-shadow: 2px 2px black;
+        font-size: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    .title{
+        font-size: 15px;
+        font-style: bold;
+        color: white;
+        text-shadow: 3px 3px black;
+        overflow: auto;
+        text-align: left;
+    }
 
 
-// }
+}
 
-// .listItem:hover{
-//     transform: scale(1.08);
-//     opacity: 1;
-//     z-index: 10;
+.admin-listItem:hover{
+    img{
+        filter:brightness(0.5);
+        cursor: pointer;
+    }
+    .centered{
+        text-indent: 0px;
+        text-align: center;
 
-//     .icon{
-//         border: 2px solid #FF4C29;
-//         color: white;
-//         background-color: var(--main-color);
-//     }
+
+    }
+    transform: scale(1.05);
+    // opacity: 1;
+    // z-index: 10;
+
+    .icon{
+        border: 2px solid #FF4C29;
+        color: white;
+        background-color: var(--main-color);
+    }
     
-//     overflow: visible;
-//     // box shadow
-//     -webkit-box-shadow: 0px -6px 12px 5px #082032; 
-//     box-shadow: 0px -6px 12px 5px #082032;
-// }
+    overflow: visible;
+    // box shadow
+    -webkit-box-shadow: 0px -6px 12px 5px #082032; 
+    box-shadow: 0px -6px 12px 5px #082032;
+}
 
 
 
