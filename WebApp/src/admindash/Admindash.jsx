@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 // import { useNavigate } from 'react-router-dom'
 import "./admindash.scss"
 import List from "../components/adminlist/Adminlist"
-
-let temp = {}
+import Navbar from "../components/navbar/Navbar"
 
 export default function Admindash() {
 
@@ -91,6 +90,8 @@ export default function Admindash() {
     try {
         return (
             <div className='admin'>
+                <Navbar/>
+                <br></br>
                 <br></br>
                 <h1 className='outert'>Change Featured</h1>
                 <div className='change-featured'>

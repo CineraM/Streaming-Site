@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './adminlistItem.scss'
 // import { useNavigate } from "react-router-dom"
-// import React, { useState } from 'react';
 
 const likes = 12
 
 export default function Listitem(props) {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
 
   const [genres, setGenres] = useState('')
   const [id, setId] = useState('')
@@ -55,8 +53,7 @@ useEffect(() => {
     setTitle(props.title)
   }
   get_data()
-
-  // eslint-disable-next-line
+   // eslint-disable-next-line
 },[])
 
   return (

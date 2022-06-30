@@ -6,9 +6,11 @@ import { useNavigate } from "react-router-dom";
 // Scroll function to change the opacity of the navbar
 const Navbar = () => {
 
-  function lougout() 
+  function logout() 
   {
     localStorage.removeItem('token')
+    localStorage.removeItem('admin_token')
+    localStorage.removeItem('user_name')
     navigate('/login')
 	}  
 
@@ -80,7 +82,7 @@ const Navbar = () => {
 
                 <span className='settings-btn' onClick={settings}>Setting</span>
 
-                <span className='logout-btn' onClick={lougout}>Logout</span>
+                <span className='logout-btn' onClick={logout}>Logout</span>
                 {/* onClick={lougout} */}
               </div>
             </div>

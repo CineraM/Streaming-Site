@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "62b9f6b6d10b4654956a18f0"
+  },
+  "email": "admin001@anifox.com",
+  "password": "$2a$10$fhN/5DjuPBYRU2UdX/E8be6XRGm.yY5SGgVN.lTx7u3WuD1L0d1XC",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62b9f6f5d10b4654956a18f2"
+  },
+  "email": "admin002@anifox.com",
+  "password": "$2a$10$MzyKtHjiCIr4EI61bg0VoeP2v4GGOCQVKp8HWlHkrdexVh7tWOoO.",
+  "__v": 0
+}]

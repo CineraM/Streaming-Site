@@ -17,16 +17,25 @@ const Home = () => {
   const [movies, setMovies] = useState([])
 
   const token = localStorage.getItem('token')
+  const admin_token = localStorage.getItem('admin_token')
 
   let navigate = useNavigate();
   
   useEffect(() => {
     document.title = "Ani-Fox"
+
+    // admin validation
+    console.log(admin_token)
+    if (admin_token) {
+      // if admin user, remove user token
+      localStorage.removeItem('token')
+      navigate('/admin_dashboard')
+    }
+
     // user validation
     if (token) {
       const user = jwt(token)
       if (!user) {
-        // console.log('jkhg')
         localStorage.removeItem('token')
         navigate('/login')
       }

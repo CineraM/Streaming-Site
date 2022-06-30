@@ -4,6 +4,7 @@ import "./logincontent.scss"
 
 export default function Logincontent() {
     const token = localStorage.getItem('token')
+    const admin_token = localStorage.getItem('admin_token')
 
     localStorage.setItem('LS_ID', '19')         // default anime page id
 
@@ -27,27 +28,35 @@ export default function Logincontent() {
 		})
 
 		const data = await response.json()
+        if(data.admin_user)
+        {
+            localStorage.setItem('admin_token', data.admin_user)
+            localStorage.setItem('user_name', 'Admin')
+            navigate('/admin_dashboard')
+        }
+        else
+        {
+            if (data.user) {
+                localStorage.setItem('token', data.user)
+                localStorage.setItem('user_name', data.email)
+                // alert('Login successful')
+                //window.location.href = '/home'
+                navigate('/home')
+            } else {
+                alert('Error: please try again')
+            }
+        }
 
-		if (data.user) {
-			localStorage.setItem('token', data.user)
-            localStorage.setItem('user_name', data.email)
-			// alert('Login successful')
-			//window.location.href = '/home'
-            navigate('/home')
-		} else {
-			alert('Please check your username and password')
-		}
 	}    
 
     useEffect(() => {
+        if(admin_token)
+        {
+            navigate('/admin_dashboard')
+        }
         if (token) {
-            // console.log('WHAT?')
             navigate('/home')
         }
-        // else
-        // {
-        //     console.log("")
-        // }
         // eslint-disable-next-line
     },[])
 
@@ -89,4 +98,3 @@ export default function Logincontent() {
     </div>
   )
 }
-

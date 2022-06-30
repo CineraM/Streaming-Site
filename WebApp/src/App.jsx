@@ -5,6 +5,7 @@ import Login from "./login/Login";
 import Register from "./register/Register";
 import Settings from "./settings/Settings";
 import Admin from "./admindash/Admindash";
+import Test from "./test/Test"
 
 import {
   BrowserRouter as Router,
@@ -32,6 +33,11 @@ function App(){
         <Route path="/settings" element={<Settings /> } />
 
         <Route path="/admin_dashboard" element={<Admin /> } />
+
+        {/* default path */}
+        <Route path="/*" element={<Login /> } /> 
+        {/* testing */}
+        {/* <Route path="/testing" element={<Test /> } /> */}
 
     </Routes>
   </Router>

@@ -14,6 +14,7 @@ export default function Anime() {
 
   let navigate = useNavigate();
   const token = localStorage.getItem('token')
+  const admin_token = localStorage.getItem('admin_token')
   const [mylist, setMylist] = useState([])
 
   async function fetchList(list) 
@@ -38,6 +39,13 @@ export default function Anime() {
     }
 
     getLists()
+
+    // admin validation
+    if (admin_token) {
+      // if admin user, remove user token
+      localStorage.removeItem('token')
+      navigate('/admin_dashboard')
+    }
     
     if (token) {
       const user = jwt(token)

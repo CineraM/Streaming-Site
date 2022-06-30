@@ -13,6 +13,7 @@ mydb = client["ani-fox-db"]
 
 aniCollection = mydb["featured"]
 
+
 featured = [
     {
         'genres': "Action",
