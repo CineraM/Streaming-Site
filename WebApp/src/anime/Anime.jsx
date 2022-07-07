@@ -16,17 +16,22 @@ export default function Anime() {
   const token = localStorage.getItem('token')
   const admin_token = localStorage.getItem('admin_token')
   const [mylist, setMylist] = useState([])
+  const [user] = useState(localStorage.getItem('user_email'))
 
-  async function fetchList(list) 
-  {
-      try {
-          const response = await fetch(`http://localhost:1337/api/${list}`, {
-              method: 'GET'
-          });
-          const mylist = await response.json();
-          return mylist;
-      } 
-      catch (error) {console.error(error);}
+  async function get_user_list() {    
+    try {
+      const response = await fetch('http://localhost:1337/api/get_user_likes_genre', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user,
+        }),
+    })
+    const mylist = await response.json()
+    return mylist
+   } catch (error) {console.error(error);}
   }
   
 	useEffect(() => {
@@ -34,7 +39,7 @@ export default function Anime() {
     window.scrollTo(0, 0) 
     async function getLists() 
     {   
-      const tempList = await fetchList("action");
+      const tempList = await get_user_list();
       setMylist(tempList);
     }
 
@@ -69,7 +74,6 @@ export default function Anime() {
         <Aniheader aniId={localStorage.getItem('LS_ID')}/>
         <br />
         <Anicontent aniId={localStorage.getItem('LS_ID')}/>
-
 
         <List title="Recommended" data={mylist} isInAnime={true}/>
         

@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react'
 import "./admindash.scss"
 import List from "../components/adminlist/Adminlist"
 import Navbar from "../components/navbar/Navbar"
+import { useNavigate } from 'react-router-dom';
 
 export default function Admindash() {
 
+    let navigate = useNavigate();
+    const token = localStorage.getItem('token')
+    // const admin_token = localStorage.getItem('admin_token')
     const [action, setAction] = useState([])
     const [drama, setDrama] = useState([])
     const [adventure, setAdventure] = useState([])
@@ -35,6 +39,9 @@ export default function Admindash() {
     }
     
     useEffect(() => {
+        if (token) {
+            navigate('/home')
+          }
         document.title = "Admin-Fox"
 
         // Query and store genres

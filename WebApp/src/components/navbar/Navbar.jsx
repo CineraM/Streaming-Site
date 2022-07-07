@@ -1,4 +1,4 @@
-import { ArrowDropDown, Search } from '@material-ui/icons' //Notifications
+import { ArrowDropDown } from '@material-ui/icons' //Notifications
 import { useState } from 'react'
 import "./navbar.scss"
 import { useNavigate } from "react-router-dom";
@@ -37,9 +37,6 @@ const Navbar = () => {
 
   window.scrollTo(0, 0)
 
-  //debug, delete later
-  // console.log(isScrolled)
-
   // Use the bool variable to determine what to pass into the xml
   return (
     <div className={isScrolled ? "navbar scrolled" : "navbar"}>
@@ -55,23 +52,12 @@ const Navbar = () => {
             onClick={() => navigate("/home")}>
               Homepage 
             </span>
-            {/* <span
-              onClick={() => {
-                localStorage.setItem('LS_ID', '47778')
-                navigate("/anime")
-              }}
-            >
-              Series</span> */}
-            {/* <span
-             onClick={() => navigate("/register")}
-            >Movies</span>
-            <span>Trending</span> */}
 
           </div>
 
           <div className="right">
-            <Search className='icon'/>
-            <span>Welcome Back, {name}</span>
+            {/* <Search className='icon'/> */}
+            <span>Welcome back {name}</span>
 
             {/* <img src="https://blog.jodilogik.com/wp-content/uploads/2016/05/people-1.png" alt="" /> */}
 

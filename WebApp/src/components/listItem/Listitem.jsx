@@ -1,19 +1,28 @@
 import { AddOutlined, PlayArrowOutlined, ThumbDownAltOutlined, ThumbUpOutlined } from '@material-ui/icons'
 import './listitem.scss'
 import { useNavigate } from "react-router-dom"
-// import React, { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 
 
 export default function Listitem(props) {
-  // const [isHover, setIsHover] = useState(false);
-  // {isHover && (html stuff here)}
 
-  
   let navigate = useNavigate();
+
   return (
     <div className='listItem'>
         <img
+            onClick={() => {
+              if(props.isAnime)
+              {
+                localStorage.setItem('LS_ID', props.aniId)
+                window.location.reload()
+              }
+              else
+              {
+                localStorage.setItem('LS_ID', props.aniId)
+                navigate("/anime")
+              }
+            }} 
             src={props.poster}
             alt="" 
         />
@@ -22,7 +31,7 @@ export default function Listitem(props) {
         <div className='title'>
             {props.title}
           </div>
-          <div className="icons">
+          {/* <div className="icons">
             <PlayArrowOutlined className='icon' 
               onClick={() => {
                 if(props.isAnime)
@@ -40,8 +49,8 @@ export default function Listitem(props) {
             <AddOutlined className='icon'/>
             <ThumbUpOutlined className='icon'/>
             <ThumbDownAltOutlined className='icon'/>
-          </div>
-          
+          </div> */}
+
       </div>
     </div>
   )

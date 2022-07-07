@@ -15,14 +15,16 @@ How to run server:
 
     or "yarn dev"
 */
-const express = require('express')
-const app = express()
-const cors = require('cors')
 const mongoose = require('mongoose')
 const User = require('./models/user.model')
 const Anime = require('./models/anime.model')
 const Featured = require('./models/featured.model')
 const Admin = require('./models/wadmin.model')
+const Likes = require('./models/likes.model')
+
+const express = require('express')
+const app = express()
+const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
@@ -47,8 +49,80 @@ app.post('/api/register_admin', async (req, res) => {
 })
 
 
+app.post('/api/like', async (req, res) => {
+	// console.log(req.body)
+	try {
+		await Likes.create({
+			like_id: req.body.user + req.body.anime ,
+			user: req.body.user,
+			anime: req.body.anime,
+			genres: req.body.genres,
+		})
+		res.json({ status: 'ok' })
+	} catch (err) {
+		// console.log(err)
+		res.json({ status: 'error', error: err })
+	}
+})
+
+app.post('/api/remove_like', async (req, res) => {
+	// console.log(req.body)
+	try {
+		await Likes.findOneAndDelete({
+			like_id: req.body.user + req.body.anime,
+		})
+		res.json({ status: 'ok' })
+	} catch (err) {
+		console.log(err)
+		res.json({ status: 'error', error: err })
+	}
+})
+
+app.post('/api/get_anime_likes', async (req, res) => {
+	// console.log(req.body)
+	Likes.find({ anime: req.body.id,})
+	.then((result) => {
+		res.send(result)
+	})
+	.catch((err) => {
+		console.log(err)
+	})
+})
+
+app.post('/api/get_user_likes_genre', async (req, res) => {
+	
+	Likes.find({ user: req.body.user,})
+	.then((result) => {
+
+		var freq = {}
+		var genre = "Action"
+		for (var i = 0; i < result.length; i++)
+		{
+			if (freq[result[i]['genres']]) {
+				freq[result[i]['genres']] += 1;
+			} else {
+				freq[result[i]['genres']]= 1;
+			}
+		}
+
+		if(result.length>0)
+		{
+			// Get max key sorted by value
+			genre = (Object.keys(freq).reduce((a, b) => freq[a] > freq[b] ? a : b))
+		}
+
+		Anime.find({ genres: genre })
+		.then((usrList) => {
+			res.send(usrList)
+		})
+		.catch((err) => { console.log(err) })
+	})
+	.catch((err) => {
+		console.log(err)
+	})
+})
+
 app.post('/api/register', async (req, res) => {
-	console.log(req.body)
 	try {
 		const newPassword = await bcrypt.hash(req.body.password, 10)
 		await User.create({
@@ -62,37 +136,6 @@ app.post('/api/register', async (req, res) => {
 	}
 })
 
-// app.post('/api/login_admin', async (req, res) => {
-// 	const admin_user = await Admin.findOne({
-// 		email: req.body.email,
-// 	})
-
-// 	if (!admin_user) {
-// 		return { status: 'error', error: 'Invalid login' }
-// 	}
-
-// 	const isPasswordValid = await bcrypt.compare(
-// 		req.body.password,
-// 		admin_user.password
-// 	)
-
-// 	if (isPasswordValid) {
-// 		const admin_token = jwt.sign(
-// 			{
-// 				email: admin_user.email,
-// 			},
-// 			'secret123'
-// 		)
-
-// 		return res.json({
-// 			 status: 'ok', 
-// 			 admin_user: admin_token, 
-// 			 email: admin_user.name 
-// 			}) // query the db, return the items you need
-// 	} else {
-// 		return res.json({ status: 'error', admin_user: false })
-// 	}
-// })
 
 app.post('/api/login', async (req, res) => {
 
@@ -115,11 +158,10 @@ app.post('/api/login', async (req, res) => {
 				},
 				'secret1232'
 			)
-			console.log('asd')
 			return res.json({
 				 status: 'ok', 
 				 admin_user: admin_token, 
-				 email: admin_user.email 
+				 email: admin_user.name 
 				}) // query the db, return the items you need
 		}	
 		else
@@ -154,7 +196,8 @@ app.post('/api/login', async (req, res) => {
 			return res.json({
 				 status: 'ok', 
 				 user: token, 
-				 email: user.name 
+				 name: user.name,
+				 email: user.email 
 				}) // query the db, return the items you need
 		} else {
 			return res.json({ status: 'error', user: false })
@@ -197,6 +240,29 @@ app.get('/api/featured', function (req, res){
 })
 
 
+app.post('/api/change_password', async (req, res) => {
+
+	const newPassword = await bcrypt.hash(req.body.password, 10)
+	const filter = {email: req.body.email}
+	const update = {
+		name: req.body.name,
+		email: req.body.email,
+		password: newPassword, 
+	}
+	
+	try {
+		await User.findOneAndUpdate(
+			filter,
+			update,
+		)
+		return res.json({ status: 'ok' })
+	} catch (error) {
+		console.log(error)
+		res.json({ status: 'error', error: 'successfull' })
+	}
+})
+
+
 app.post('/api/change_featured', async (req, res) => {
 	const filter = {genres: req.body.genres}
 	const update = {genres: req.body.genres, id: req.body.id, 
@@ -216,21 +282,6 @@ app.post('/api/change_featured', async (req, res) => {
 	}
 })
 
-
-
-// DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS
-app.get('/api/action', function (req, res){
-	
-	Anime.find({ genres: 'Action' })
-		.then((result) => {
-			res.send(result)
-		})
-		.catch((err) => {
-			console.log(err)
-		})
-})
-
-// DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS DELETE THIS
 
 app.listen(1337, () => {
 	console.log('Server started on 1337')

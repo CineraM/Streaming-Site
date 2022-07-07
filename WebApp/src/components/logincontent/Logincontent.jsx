@@ -38,9 +38,8 @@ export default function Logincontent() {
         {
             if (data.user) {
                 localStorage.setItem('token', data.user)
-                localStorage.setItem('user_name', data.email)
-                // alert('Login successful')
-                //window.location.href = '/home'
+                localStorage.setItem('user_name', data.name)
+                localStorage.setItem('user_email', data.email)
                 navigate('/home')
             } else {
                 alert('Error: please try again')
@@ -81,8 +80,8 @@ export default function Logincontent() {
                         placeholder="Password"
 				    />
 
-                    <a href="https://cdn.discordapp.com/attachments/222875289271664644/980645220288954398/277968806_1162241284539661_4886726701017993053_n.mp4">
-                        Forgot your password?</a>
+                    {/* <a href="https://cdn.discordapp.com/attachments/222875289271664644/980645220288954398/277968806_1162241284539661_4886726701017993053_n.mp4">
+                        Forgot your password?</a> */}
                     <button className='signIn-btn' type='submit'>Sign In</button>
                 </form>
             </div>

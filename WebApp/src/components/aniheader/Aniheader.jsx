@@ -4,8 +4,11 @@ import { useEffect, useState } from 'react'
 import "./aniheader.scss"
 
 
-
 export default function Aniheader(props) {
+
+  const [user, setUser] = useState('')
+  const [anime, setAnime] = useState('')
+  const [genres, setGenres] = useState('')
 
   // usestate from react, use a bool variable in the css file
   const [isVertical, setIsVertical] = useState(false);
@@ -20,6 +23,48 @@ export default function Aniheader(props) {
     return() => (window.onresize = null);
   };
 
+  async function like() {    
+    const response = await fetch('http://localhost:1337/api/like', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user,
+            anime,
+            genres,
+        }),
+    })
+
+    const data = await response.json()
+
+    if (data.status === 'ok') {
+        console.log("Succesfull like")
+        // window.location.reload(false);
+    }
+  }
+
+  async function remove_like() {    
+    const response = await fetch('http://localhost:1337/api/remove_like', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user,
+            anime,
+        }),
+    })
+
+    const data = await response.json()
+
+    if (data.status === 'ok') {
+        console.log("Like Removed")
+        // window.location.reload(false);
+    }
+  }
+
+  
 
   useEffect(() => {
     setIsVertical(window.innerWidth/window.innerHeight < 1 ? true : false);
@@ -43,7 +88,6 @@ export default function Aniheader(props) {
         } 
         catch (error) 
         {
-            console.log('ERROR')
             console.error(error);
         }
     }
@@ -52,8 +96,12 @@ export default function Aniheader(props) {
     {  
       const aniDataList = await fetchAniData();
       setAniData(aniDataList)
-
+      // setLid(aniDataList.id + localStorage.getItem('user_email'));
+      setUser(localStorage.getItem('user_email'));
+      setAnime(aniDataList.id);
+      setGenres(aniDataList.genres);
     }
+
     getAniData()
     // eslint-disable-next-line
   }, [])
@@ -102,15 +150,23 @@ export default function Aniheader(props) {
     
     
               <div className="buttons">
-                <button className={isVertical ? "more-btn vertical" : "more-btn"}>
+                {/* <button className={isVertical ? "more-btn vertical" : "more-btn"}>
                   <AddOutlined className='icon'/>
-                </button>
+                </button> */}
     
-                <button className={isVertical ? "more-btn vertical" : "more-btn"}>
+                <button className={isVertical ? "more-btn vertical" : "more-btn"} 
+                      onClick={() => {
+                        like()
+                       }} 
+                       >
                   <ThumbUpOutlined className='icon'/>
                 </button>
     
-                <button className={isVertical ? "more-btn vertical" : "more-btn"}>
+                <button className={isVertical ? "more-btn vertical" : "more-btn"}
+                                      onClick={() => {
+                                        remove_like()
+                                       }} 
+                                       >
                   <ThumbDownAltOutlined className='icon'/>
                 </button>
     

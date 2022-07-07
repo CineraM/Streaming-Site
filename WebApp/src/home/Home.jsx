@@ -25,7 +25,6 @@ const Home = () => {
     document.title = "Ani-Fox"
 
     // admin validation
-    console.log(admin_token)
     if (admin_token) {
       // if admin user, remove user token
       localStorage.removeItem('token')

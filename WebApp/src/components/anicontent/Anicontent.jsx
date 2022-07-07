@@ -3,10 +3,9 @@ import "./anicontent.scss"
 
 
 export default function Anicontent(props) {
-   
-  const[select, setSelect] = useState('');
+  
 
-  // const [aniId, setAniId] = useState(5114)
+  const[select, setSelect] = useState('');
   const [aniData, setAniData] = useState([])
   const aniId = localStorage.getItem('LS_ID')
 
@@ -42,7 +41,6 @@ export default function Anicontent(props) {
       const aniDataList = await fetchAniData();
       setAniData(aniDataList)
     }
-
     getAniData()
     // eslint-disable-next-line
   }, [])
@@ -52,9 +50,7 @@ export default function Anicontent(props) {
     return (
 
       <div className="anicontent">
-  
           <div className="container">
-  
             <div className="right">
   
               <video 

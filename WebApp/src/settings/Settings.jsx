@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Registercontent from "../components/settingscontent/Settingscontent"
+import SettingsContent from "../components/settingscontent/Settingscontent"
 import Navbar from "../components/navbar/Navbar"
 import "./settings.scss"
 import { useNavigate } from "react-router-dom"
@@ -33,7 +33,7 @@ export default function Settings() {
         <div className="settings">
             <Navbar />
             <div className='content'>
-                <Registercontent />
+                <SettingsContent />
             </div>
             
         </div>

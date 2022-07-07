@@ -11,13 +11,13 @@ export default function Features() {
   const [index, setIndex] = useState(0)
   let navigate = useNavigate();
 
+
   // if the page offset is larger than 0, unblur the navbar
   window.onresize = () =>{
     // let aspectRatio = window.innerWidth/window.innerHeight;
     setIsVertical(window.innerWidth/window.innerHeight < 1 ? true : false);
     return() => (window.onresize = null);
   };
-
 
 
   async function getFeatured() 
@@ -96,7 +96,7 @@ export default function Features() {
                 <span>Play</span>
               </button>
   
-              <button className={isVertical ? "more-btn vertical" : "more-btn"}>
+              {/* <button className={isVertical ? "more-btn vertical" : "more-btn"}>
                 <AddOutlined className='icon'/>
               </button>
   
@@ -106,7 +106,7 @@ export default function Features() {
   
               <button className={isVertical ? "more-btn vertical" : "more-btn"}>
                 <ThumbDownAltOutlined className='icon'/>
-              </button>
+              </button> */}
   
             </div>
         </div>

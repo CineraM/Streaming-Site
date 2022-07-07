@@ -1,23 +1,19 @@
 import { useEffect, useState } from 'react';
 import './adminlistItem.scss'
-// import { useNavigate } from "react-router-dom"
-
-const likes = 12
 
 export default function Listitem(props) {
-  // let navigate = useNavigate();
 
   const [genres, setGenres] = useState('')
-  const [id, setId] = useState('')
+  const [id, setId] = useState(props.aniId)
   const [images, setImages] = useState('')
   const [links, setLinks] = useState('')
   const [synopsis, setSynopsis] = useState('')
   const [title, setTitle] = useState('')
+  const [likes, setLikes] = useState([])
 
   
   async function changeFeatured() {
         
-    console.log(props.links)
     const response = await fetch('http://localhost:1337/api/change_featured', {
         method: 'POST',
         headers: {
@@ -41,17 +37,36 @@ export default function Listitem(props) {
     }
 }
 
+async function get_anime_likes() {
+  try {
+    const response = await fetch('http://localhost:1337/api/get_anime_likes', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+          id,
+      }),
+    });
+    const mylist = await response.json();
+    return mylist;
+  } catch (error) {console.error(error);}  
+}
+
 useEffect(() => {
   async function get_data() 
   {
-   
     setGenres(props.genres);
     setId(props.aniId)
     setImages(props.poster)
     setLinks(props.links[0])
     setSynopsis(props.synopsis)
     setTitle(props.title)
+
+    const likesList = await get_anime_likes()
+    setLikes(likesList) 
   }
+
   get_data()
    // eslint-disable-next-line
 },[])
@@ -66,7 +81,7 @@ useEffect(() => {
       <div className="newfeat"> New Featured </div>
 
       <div className='wrapper'>
-        <div className="likes"> {likes} likes </div>
+        <div className="likes"> {likes.length} likes </div>
 
         <img
             src={props.poster}
@@ -79,6 +94,8 @@ useEffect(() => {
             {props.title}
           </div>
       </div>
+      <h1>
+      </h1>
     </div>
   )
 }
