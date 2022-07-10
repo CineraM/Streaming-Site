@@ -1,10 +1,11 @@
 # Anime Streaming Site
-Objective: Replicate a streaming site with anime oriented content. 
-**MOCK SITE, WILL NOT BE DEPLOYED**
+Mock Web Application similar to existing subscription based steaming services.  
 
-## Stack: MongoDB - Express - React - Node
+## Stack: MongoDB - Express - React - NodeJS
 
-While developing the website, I created 2 different applications. A react application to handle the front-end, and an Express server that works as an API to fetch and validate data from the database.  
+**2 React applications:**  
+  Client: Application that handles the front-end and requests to the db,
+  Server: An ExpressJS server that works as an API to fetch and validate data from the database.  
   
 ### Package Manager 
      npm install --global yarn
@@ -19,8 +20,8 @@ While developing the website, I created 2 different applications. A react applic
      yarn add bcryptjs
      
 ### Run server
-     yarn init  # only the first time
-     yarn dev
+     yarn init 
+     yarn start
 
 
 ## React WebApp
@@ -34,11 +35,11 @@ While developing the website, I created 2 different applications. A react applic
      https://fonts.google.com/specimen/Roboto#standard-styles  
      ^^^ Google fonts
 ### Run WebApp
-     yarn init  # only the first time
+     yarn init
      yarn dev
 
 
-# MongoDB data
+# MongoDB data 
 Most information about Anime entries in the database were obtained using JikanV4(MyAnimeList unofficial API). For the video entries I used hyperlinks to https://staging.animethemes.moe (Website that hosts Anime Themes).  
 I wrote Python scripts to fetch the data and build the MongoDB Database.
 
@@ -61,9 +62,25 @@ I wrote Python scripts to fetch the data and build the MongoDB Database.
 │   └── topAniIds.json         # Store the top Anime Ids of MyAnimeList.com
 ```
 
+# Deployment
+### Front-end - Netlify
+Service that hosts the ReactJS Client application  
+https://www.netlify.com    
+
+### Back-end - Heroku  
+Service that hosts the ExpressJS Server application    
+https://heroku.com     
+      
+
+### Front-end - MongoDB Atlas Database
+Cloud base mongoDB database  
+https://www.mongodb.com/atlas/database
+
+# Link to webiste  
+https://glistening-griffin-8ee37f.netlify.app/ 
 
 
-## Running examples 
+# Running examples 
 ### Featured Section  
 ![Screenshot 2022-06-15 044844](https://user-images.githubusercontent.com/64340009/173786435-d139e825-be96-4d54-ad21-dd6723eebcc2.jpg)  
 
@@ -81,5 +98,5 @@ I wrote Python scripts to fetch the data and build the MongoDB Database.
 ![Screenshot 2022-06-15 045404](https://user-images.githubusercontent.com/64340009/173786902-81adfa39-c887-4c90-a3eb-50a0852828dc.jpg)  
 ![image](https://user-images.githubusercontent.com/64340009/173787111-b04f0741-e117-4ab4-9c29-fea396bb2da6.png)
 
-
-#### Doing this to learning NodeJS & React along the way! Still in progress :) 
+### Admin Dashboard    
+![image](https://user-images.githubusercontent.com/64340009/178165353-175c8ff2-b193-468d-8523-88d7b3bd3c7c.png)
