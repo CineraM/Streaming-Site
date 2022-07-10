@@ -1,0 +1,212 @@
+.featured{
+    height: 90vh;
+    &.vertical{ // if vertical increase image size
+        height: 60vh;
+    }
+    
+    //background-color: var(--main-color);
+    position: relative;
+    overflow: hidden;   // video edges dont bleed out of the bottom of the video/image
+
+    .category{
+        z-index: 900;
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        font-size: 30px;
+        font-weight: 500;
+        color: white;
+        text-shadow: 3px 3px var(--main-color);
+        display: flex;
+        align-items: right;
+
+        &.vertical{ // if vertical increase image size
+            font-size: 20px;
+        }
+
+        .genres{
+            cursor: pointer;
+            background-color: var(--main-color);
+
+            font-size: 15px;
+            border: 2px solid #FF4C29;
+            border-radius: 2px;
+            outline:0px;
+            color: white;
+
+            margin-left: 20px;
+            
+            padding: 5px;
+            &.vertical{ // if vertical increase image size
+                padding: 2px;
+            }
+        }
+
+        .genres::after{
+            border: 2px solid #FF4C29;
+
+        }
+
+        .genres::before{
+            border: 2px solid #FF4C29;
+
+        }
+    }
+    
+    video {
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        filter: blur(7px) saturate(1.4);
+    }
+
+    .info{
+        display: flex;                  
+        align-items: center;
+        justify-content: space-between;
+
+        top: 15%;
+
+        margin-left: 60px;
+
+        position: relative;
+
+
+        
+        color: white;   
+
+        .left{
+            .poster{
+                border: 4px solid var(--main-color);
+                filter: saturate(1.2);
+    
+                margin: auto;
+                max-height: 60vh;
+                max-width: 30vw;
+                
+                position: relative;
+                -o-object-fit: contain;
+                object-fit: contain;
+    
+            }
+        }
+
+        .title{
+            &.vertical{ 
+                font-size: 3.7vh;
+            }
+            margin-left: 50px;
+            margin-right: 55px;
+            font-size: 5.4vw;
+            text-shadow: 5px 5px var(--main-color);
+        }
+
+        .desc{
+            &.vertical{ 
+                font-size: 1.2vh;
+            }
+
+            margin-left: 50px;
+            margin-right: 55px;
+
+            font-size: 1.1vw;
+
+            max-width: 90%;
+            text-shadow: 2px 2px var(--main-color);
+        }
+
+        // .related{
+        //     padding-top: 10px;
+        //     margin-left: 50px;
+
+        //     font-size: 1.0vw;
+
+        //     max-width: 90%;
+        //     text-shadow: 2px 2px var(--main-color);
+
+        //     &.vertical{ 
+        //         font-size: 1.2vh;
+        //     }
+        // }
+
+        // .r_links{
+        //     left: 50px;
+        //     margin-left: 0px;
+
+        //     color: #FF4C29;
+        //     list-style: inside;
+        //     font-size: 1.0vw;
+        //     text-decoration: underline;
+        //     text-shadow: 1px 1px var(--main-color);
+        //     font-weight: bold;
+
+        //     &.vertical{ 
+        //         font-size: 1.1vh;
+        //     }
+
+        //     .link{
+        //         margin-left: 10px;
+        //         cursor: pointer;
+        //     }
+        // }
+
+        .buttons{
+            display: flex;
+            margin-left: 50px;
+
+            button{
+                &.vertical{ 
+                    padding: 5px 10px;
+                }
+
+                padding: 10px 20px;
+                margin: 10px 0px;
+                border: none;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                width: auto;
+                font-weight: 400px;
+                margin-right: 10px;
+                cursor: pointer;
+
+                &.play-btn{
+                    background-color: #FF4C29;
+                    border: 3px solid var(--main-color);
+                    color: white; 
+                    transition-duration: 0.4s;
+                }
+
+                &.more-btn{
+                    background-color: var(--main-color);
+                    border: 2px solid #FF4C29;
+                    color: white;
+                    transition-duration: 0.4s;
+                }
+
+            }
+
+
+        }
+
+    }
+}
+
+
+.play-btn:hover{   
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.more-btn:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+
+

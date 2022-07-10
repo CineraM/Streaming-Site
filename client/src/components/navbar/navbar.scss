@@ -1,0 +1,115 @@
+.navbar{
+    //color of the nav bar
+    color:#FF4C29;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+
+    
+    width: 100%;        // extend all the screen
+    position: fixed;    // navbar will always stay in the same position
+    z-index: 999;       // ensure the navbar is rendered above everything else
+    background: linear-gradient(to top, transparent 0%, rgb(0,0,0,0.4) 100%);
+
+    &.scrolled{         // use the class name to determine 
+        background-color: #334756;
+    }
+
+    
+    .container
+    {
+        height: 58px;                   
+        padding: 0px 50px;              // horizontal padding
+        display: flex;                  
+        align-items: center;
+        justify-content: space-between; // space between the left and right containters
+                                        // left is on the left side, right is on the right side of the screen
+
+        .left{                      
+            display: flex;          
+            align-items: center;    
+            img{
+                margin-right: 15px;
+                height: 30px;
+                cursor: pointer;    // when hovered, the cursor changes
+            }
+
+            span{
+                margin-right: 20px;
+                cursor: pointer;
+            }
+        }
+
+        .right
+        {
+            display: flex;
+            align-items: center;
+
+            .icon{
+                margin: 0px 15px;
+                cursor: pointer;
+            }
+
+            img{
+                padding-left: 15px;
+                height: 30px;
+                width: 30px;
+                border-radius: 5px;     // smooth the borders of the image
+                object-fit: cover;      // streches to cover, same aspect ratio
+                cursor: pointer;
+            }
+
+            // profile container used to display logout and login information
+            .profile{
+                .options{
+                    display: none;
+                    background-color: var(--main-color);
+                    border-radius: 5px;
+                }
+            
+                span{
+                    padding: 10px;
+                    cursor: pointer;
+                }
+
+                &:hover{
+                    .options{
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+
+                        .settings-btn
+                        {
+                            color:#FF4C29;
+                            background-color: var(--main-color);
+                            &:hover
+                            {
+                                
+                                font-size: 18px;
+                                color: var(--main-color);
+                                background-color: #FF4C29;
+                                text-shadow: 0px 0px black;
+                            }
+                        }
+
+                        .logout-btn
+                        {
+                            color:#FF4C29;
+                            background-color: var(--main-color);
+                            &:hover
+                            {
+                                
+                                font-size: 18px;
+                                color: var(--main-color);
+                                background-color: #FF4C29;
+                                text-shadow: 0px 0px black;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.admin{
+	background-color: var(--main-color);
+    // height: 100vh;
+
+
+    .outert{
+        font-size: 40px;
+        font-style: bold;
+        color: white;
+        text-shadow: 4px 4px black;
+        overflow: auto;
+        margin-left: 10%;
+    }
+
+    .change-featured
+    {
+        margin-left: 10%;
+        margin-right: 10%;
+
+        .wrapper{
+            display: flex;
+
+            .left{
+                flex: 1;
+                margin-left: 1%;
+                margin-top: 1%;
+                img{height: 350px;}
+            }
+
+            .right{
+                overflow-x: scroll;
+            }
+            .right::-webkit-scrollbar {
+                display: none;
+              }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+import "./app.scss"
+import Home from "./home/Home";
+import Anime from "./anime/Anime";
+import Login from "./login/Login";
+import Register from "./register/Register";
+import Settings from "./settings/Settings";
+import Admin from "./admindash/Admindash";
+import Test from "./test/Test"
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
+
+// Default route is home
+function App(){
+  return (  
+  <Router>
+    <Routes>
+
+        <Route path="/" element={<Login />} />
+
+        <Route path="/home" element={<Home />} />
+
+        <Route path="/anime" element={<Anime />} />
+
+        <Route path="/login" element={<Login /> } />
+
+        <Route path="/register" element={<Register /> } />
+
+        <Route path="/settings" element={<Settings /> } />
+
+        <Route path="/admin_dashboard" element={<Admin /> } />
+
+        {/* default path */}
+        <Route path="/*" element={<Login /> } /> 
+        {/* testing */}
+        {/* <Route path="/testing" element={<Test /> } /> */}
+
+    </Routes>
+  </Router>
+  );
+
+  //return <Home />
+}
+
+export default App;

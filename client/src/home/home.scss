@@ -1,0 +1,19 @@
+.home{
+    background-color: var(--main-color);
+    overflow: hidden;
+}
+
+// scroll bar stuff
+::-webkit-scrollbar{
+    cursor: pointer;
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    background: #334756;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #FF4C29;
+}
+

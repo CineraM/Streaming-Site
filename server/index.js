@@ -28,6 +28,8 @@ const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
+require("dotenv").config();
+
 app.use(cors())
 app.use(express.json())
 
@@ -77,6 +79,25 @@ app.post('/api/remove_like', async (req, res) => {
 		res.json({ status: 'error', error: err })
 	}
 })
+
+app.post('/api/find_user_like', async (req, res) => {
+	Likes.find({ like_id: req.body.user + req.body.anime,})
+	.then((result) => {
+		console.log(req.body.user)
+		if(result.length>0)
+		{
+			res.send(true)
+		}
+		else
+		{
+			res.send(false)
+		}
+	})
+	.catch((err) => {
+		console.log(err)
+	})
+})
+
 
 app.post('/api/get_anime_likes', async (req, res) => {
 	// console.log(req.body)
