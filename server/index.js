@@ -304,7 +304,10 @@ app.post('/api/change_featured', async (req, res) => {
 })
 
 
-app.listen(1337, () => {
+app.listen(process.env.PORT || 1337, () => {
 	console.log('Server started on 1337')
 })
 
+// app.listen(1337, () => {
+// 	console.log('Server started on 1337')
+// })
