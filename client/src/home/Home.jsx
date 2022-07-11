@@ -54,7 +54,7 @@ const Home = () => {
           // setGenre(list)
           const genre = list
             try {
-                const response = await fetch(`http://localhost:1337/api/animeGenres`, {
+                const response = await fetch(`https://anifox-cinera.herokuapp.com/api/animeGenres`, {
                   method: 'POST',
                   headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +123,7 @@ export default Home
         // async function fetchList(list) 
         // {
         //     try {
-        //         const response = await fetch(`http://localhost:1337/api/${list}`, {
+        //         const response = await fetch(`https://anifox-cinera.herokuapp.com/api/${list}`, {
         //             method: 'GET'
         //         });
         //         const mylist = await response.json();

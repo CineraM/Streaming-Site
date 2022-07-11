@@ -20,7 +20,7 @@ export default function Anime() {
 
   async function get_user_list() {    
     try {
-      const response = await fetch('http://localhost:1337/api/get_user_likes_genre', {
+      const response = await fetch('https://anifox-cinera.herokuapp.com/api/get_user_likes_genre', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

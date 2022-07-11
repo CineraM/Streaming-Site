@@ -30,4 +30,28 @@
   "email": "james@gmail.com",
   "password": "$2a$10$2chOdg0JphAYkSjmLCbFWeAIVoF7HRl2uK6/HO3/Voya2GPNEYQBO",
   "__v": 0
+},{
+  "_id": {
+    "$oid": "62c6fc672122191975190d38"
+  },
+  "name": "Michael",
+  "email": "michael@gmail.com",
+  "password": "$2a$10$bG4xLoPVNyk7Eu.IAfw78eVjOPKKQ0hPUW4SV2jb/5ZYv9zYUcG3u",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c703f754a3801ee9a61683"
+  },
+  "name": "Nick",
+  "email": "nick@gmail.com",
+  "password": "$2a$10$AWtL1U1vo7rQtSMCCKxGYOQCZ/GnsR5v2AState562kSPxNa671qu",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c73e7b6e6b98f254018f74"
+  },
+  "name": "Andrea",
+  "email": "andrea@gmail.com",
+  "password": "$2a$10$ty5k8XKuGZ7X1ttXI1IEvu/hCY.7ZPCIh8mXZEl0/rO4KIHBG8UOm",
+  "__v": 0
 }]

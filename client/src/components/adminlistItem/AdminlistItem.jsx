@@ -14,7 +14,7 @@ export default function Listitem(props) {
   
   async function changeFeatured() {
         
-    const response = await fetch('http://localhost:1337/api/change_featured', {
+    const response = await fetch('https://anifox-cinera.herokuapp.com/api/change_featured', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ export default function Listitem(props) {
 
 async function get_anime_likes() {
   try {
-    const response = await fetch('http://localhost:1337/api/get_anime_likes', {
+    const response = await fetch('https://anifox-cinera.herokuapp.com/api/get_anime_likes', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',

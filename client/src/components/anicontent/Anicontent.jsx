@@ -14,7 +14,7 @@ export default function Anicontent(props) {
       try 
       {
 
-        const response = await fetch('http://localhost:1337/api/anime', {
+        const response = await fetch('https://anifox-cinera.herokuapp.com/api/anime', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

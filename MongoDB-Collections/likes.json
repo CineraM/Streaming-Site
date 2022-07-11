@@ -1,0 +1,217 @@
+[{
+  "_id": {
+    "$oid": "62c68ce2917b54ea543ce3a5"
+  },
+  "like_id": "henry@gmail.com2904",
+  "user": "henry@gmail.com",
+  "anime": "2904",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c68d4b917b54ea543ce3af"
+  },
+  "like_id": "henry@gmail.com38524",
+  "user": "henry@gmail.com",
+  "anime": "38524",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c68d54917b54ea543ce3c1"
+  },
+  "like_id": "henry@gmail.com48583",
+  "user": "henry@gmail.com",
+  "anime": "48583",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c68d7e917b54ea543ce3dd"
+  },
+  "like_id": "henry@gmail.com50265",
+  "user": "henry@gmail.com",
+  "anime": "50265",
+  "genres": "Comedy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c6f108e7dca5bb3facb549"
+  },
+  "like_id": "henry@gmail.com47778",
+  "user": "henry@gmail.com",
+  "anime": "47778",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c6f1b5e7dca5bb3facb579"
+  },
+  "like_id": "henry@gmail.com37521",
+  "user": "henry@gmail.com",
+  "anime": "37521",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c6f2ae2d2a5fc28d56577b"
+  },
+  "like_id": "henry@gmail.com16498",
+  "user": "henry@gmail.com",
+  "anime": "16498",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c6f2c92d2a5fc28d565794"
+  },
+  "like_id": "matias@gmail.com47778",
+  "user": "matias@gmail.com",
+  "anime": "47778",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c6fde73210d8e50a8a8548"
+  },
+  "like_id": "michael@gmail.com5114",
+  "user": "michael@gmail.com",
+  "anime": "5114",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c6fe3b54a3801ee9a61630"
+  },
+  "like_id": "matias@gmail.com199",
+  "user": "matias@gmail.com",
+  "anime": "199",
+  "genres": "Adventure",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c7018e54a3801ee9a61664"
+  },
+  "like_id": "matias@gmail.com2904",
+  "user": "matias@gmail.com",
+  "anime": "2904",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c736b5a56f6fd9e95de0e8"
+  },
+  "like_id": "matias@gmail.com43608",
+  "user": "matias@gmail.com",
+  "anime": "43608",
+  "genres": "Comedy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c736b9a56f6fd9e95de100"
+  },
+  "like_id": "matias@gmail.com50265",
+  "user": "matias@gmail.com",
+  "anime": "50265",
+  "genres": "Comedy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c736c0a56f6fd9e95de118"
+  },
+  "like_id": "matias@gmail.com245",
+  "user": "matias@gmail.com",
+  "anime": "245",
+  "genres": "Comedy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c736c7a56f6fd9e95de130"
+  },
+  "like_id": "matias@gmail.com205",
+  "user": "matias@gmail.com",
+  "anime": "205",
+  "genres": "Comedy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c736cca56f6fd9e95de148"
+  },
+  "like_id": "matias@gmail.com12431",
+  "user": "matias@gmail.com",
+  "anime": "12431",
+  "genres": "Comedy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c73ffd6e6b98f254018ffb"
+  },
+  "like_id": "andrea@gmail.com263",
+  "user": "andrea@gmail.com",
+  "anime": "263",
+  "genres": "Sports",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c893379bb4777d2e938f2b"
+  },
+  "like_id": "michael@gmail.com35247",
+  "user": "michael@gmail.com",
+  "anime": "35247",
+  "genres": "Comedy",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62ca3f3c6c7497db9efa957b"
+  },
+  "like_id": "andrea@gmail.com1575",
+  "user": "andrea@gmail.com",
+  "anime": "1575",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62ca40b671e78d55130ec5de"
+  },
+  "like_id": "andrea@gmail.com30276",
+  "user": "andrea@gmail.com",
+  "anime": "30276",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62ca4a998942c367a0eceb0b"
+  },
+  "like_id": "andrea@gmail.com33050",
+  "user": "andrea@gmail.com",
+  "anime": "33050",
+  "genres": "Avant Garde",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62ca4b258942c367a0eceb74"
+  },
+  "like_id": "andrea@gmail.com38524",
+  "user": "andrea@gmail.com",
+  "anime": "38524",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62cb02c9e9f3ad2c22e5c2bf"
+  },
+  "like_id": "andrea@gmail.com5114",
+  "user": "andrea@gmail.com",
+  "anime": "5114",
+  "genres": "Action",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62cb0e71b11fcf38432d3da8"
+  },
+  "like_id": "andrea@gmail.com47778",
+  "user": "andrea@gmail.com",
+  "anime": "47778",
+  "genres": "Action",
+  "__v": 0
+}]

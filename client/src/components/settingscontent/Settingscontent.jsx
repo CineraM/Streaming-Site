@@ -21,7 +21,7 @@ export default function Settingscontent() {
 
         event.preventDefault()
         
-        const response = await fetch('http://localhost:1337/api/change_password', {
+        const response = await fetch('https://anifox-cinera.herokuapp.com/api/change_password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

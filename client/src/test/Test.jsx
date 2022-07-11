@@ -8,7 +8,7 @@ const [password] = useState('Pass123!')
 async function registerAdmin() {
         
     
-    const response = await fetch('http://localhost:1337/api/register_admin', {
+    const response = await fetch('https://anifox-cinera.herokuapp.com/api/register_admin', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

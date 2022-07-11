@@ -23,7 +23,7 @@ export default function Admindash() {
       async function fetchFeatured() 
       {
           try {
-              const response = await fetch(`http://localhost:1337/api/featured`, {
+              const response = await fetch(`https://anifox-cinera.herokuapp.com/api/featured`, {
                 method: 'GET',
                 
               });
@@ -52,7 +52,7 @@ export default function Admindash() {
             // setGenre(list)
             const genre = list
                 try {
-                    const response = await fetch(`http://localhost:1337/api/animeGenres`, {
+                    const response = await fetch(`https://anifox-cinera.herokuapp.com/api/animeGenres`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
