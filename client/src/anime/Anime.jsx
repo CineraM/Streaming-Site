@@ -15,6 +15,7 @@ export default function Anime() {
   let navigate = useNavigate();
   const token = localStorage.getItem('token')
   const admin_token = localStorage.getItem('admin_token')
+  const [loading, setLoading] = useState(true)
   const [mylist, setMylist] = useState([])
   const [user] = useState(localStorage.getItem('user_email'))
 
@@ -29,6 +30,7 @@ export default function Anime() {
             user,
         }),
     })
+    setLoading(false)
     const mylist = await response.json()
     return mylist
    } catch (error) {console.error(error);}
@@ -67,6 +69,15 @@ export default function Anime() {
     // eslint-disable-next-line
 	}, [])
 
+  if(loading)
+  {
+    return(
+      <div className="anime">        
+        <div className="loader"></div>
+      </div> 
+    )
+
+  }
   return (
     <div className="anime">
 

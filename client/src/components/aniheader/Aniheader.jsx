@@ -5,10 +5,11 @@ import "./aniheader.scss"
 
 export default function Aniheader(props) {
 
+  var userLike = true
   const [user, setUser] = useState(localStorage.getItem('user_email'))
   const [anime, setAnime] = useState(localStorage.getItem('LS_ID'))
   const [genres, setGenres] = useState('')
-  const [likebool, setLikebool] = useState()
+  const [likebool, setLikebool] = useState(false)
 
   // usestate from react, use a bool variable in the css file
   const [isVertical, setIsVertical] = useState(false);
@@ -35,7 +36,6 @@ export default function Aniheader(props) {
         }),
     })
     const data = await response.json()
-    console.log(data)
   }
 
 
@@ -114,13 +114,35 @@ export default function Aniheader(props) {
       setAnime(aniDataList.id);
       setGenres(aniDataList.genres);
       
-      const userLike = await getUserLike()
-      setLikebool(userLike)
+      var userLike = await getUserLike()
     }
 
     getAniData()
     // eslint-disable-next-line
   }, [])
+
+
+  console.log("like: ")
+  console.log(likebool)
+  var likebutton;
+
+  if (userLike === false) {    
+    likebutton =<button className={isVertical ? "more-btn vertical" : "more-btn"} 
+                  onClick={() => {
+                    like()
+                  }} 
+                  >
+                  <ThumbUpOutlined className='icon'/>
+                </button>
+  } else {
+    likebutton = <button className={isVertical ? "more-btn vertical" : "more-btn"} 
+                  onClick={() => {
+                    remove_like()
+                  }} 
+                  >
+                  <ThumbDownAltOutlined className='icon'/>
+                </button>
+  }
 
   try {
     return (
@@ -160,22 +182,16 @@ export default function Aniheader(props) {
               </div>
 
               <div className={likebool ? "buttons likebool" : "buttons"}  >
+
+                {likebutton}
     
-                <button className={isVertical ? "more-btn vertical" : "more-btn"} 
+                {/* <button className={isVertical ? "more-btn vertical" : "more-btn"}
                       onClick={() => {
-                        like()
-                       }} 
-                       >
-                  <ThumbUpOutlined className='icon'/>
-                </button>
-    
-                <button className={isVertical ? "more-btn vertical" : "more-btn"}
-                                      onClick={() => {
-                                        remove_like()
-                                       }} 
-                                       >
+                        remove_like()
+                        }} 
+                        >
                   <ThumbDownAltOutlined className='icon'/>
-                </button>
+                </button> */}
     
               </div>
           </div>

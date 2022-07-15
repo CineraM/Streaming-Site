@@ -8,6 +8,7 @@ import jwt from 'jwt-decode'
 import { useNavigate } from "react-router-dom"
 
 const Home = () => {
+  const [loading, setLoading] = useState(true)
 
   const [action, setAction] = useState([])
   const [drama, setDrama] = useState([])
@@ -63,8 +64,8 @@ const Home = () => {
                     genre,
                   }),
                 });
+                setLoading(false)
                 const mylist = await response.json();
-                // console.log(mylist)
                 return mylist;
             } 
             catch (error) {console.error(error);}
@@ -95,13 +96,21 @@ const Home = () => {
       // eslint-disable-next-line
   }, [])
 
-  
-  return (
+  if(loading)
+  {
+      return (
+          <div className="anime">        
+            <div className="loader"></div>
+          </div> 
+  )
+  }
+  else
+  {
+      return (
     <div className='home'>
 
       <Navbar/>
       <Featured/>
-
       <br/>
       <List title="Action" data={action} isInAnime={false}/>
       <List title="Drama" data={drama} isInAnime={false}/>
@@ -112,8 +121,33 @@ const Home = () => {
       <br/>
       
       <Footer/>
+      
     </div>
   )
+  }
+
+  // return (
+  //   <div className='home'>
+
+  //     <Navbar/>
+  //     {loading ? "test" : <div className="loader"></div>}
+      
+  //     <Featured/>
+
+  //     <br/>
+  //     <List title="Action" data={action} isInAnime={false}/>
+  //     <List title="Drama" data={drama} isInAnime={false}/>
+  //     <List title="Adventure" data={adventure} isInAnime={false}/>
+  //     <List title="Comedy" data={comedy} isInAnime={false}/>
+  //     <List title="Sports" data={sports} isInAnime={false}/>
+  //     <List title="Movies" data={movies} isInAnime={false}/>
+  //     <br/>
+      
+  //     <Footer/>
+      
+  //   </div>
+  // )
+
 }
 
 export default Home

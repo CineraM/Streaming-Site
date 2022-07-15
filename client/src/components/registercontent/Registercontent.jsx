@@ -9,13 +9,14 @@ export default function Registercontent() {
     
     const navigate = useNavigate()
 
+    const [loading, setLoading] = useState(false)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [repassword, setRepassword] = useState('')
 
     async function registerUser(event) {
-        
+        setLoading(true)
         if(password !== repassword)
         {
             alert('Passwords dont match')
@@ -50,55 +51,67 @@ export default function Registercontent() {
         }
         // eslint-disable-next-line
     },[])
-    
-  return (
-    <div className='register-content'>
 
-        <div className="container">
-
-            <div className="left">
-                <h1>Already a member?</h1>
-                <button className="signUp-btn" onClick={() => navigate("/login")}> Sign In</button>
+    if(loading)
+    {
+        return (
+            <div className='login-content'>
+                <div className="loader"></div>
             </div>
-
-            <div className="right">
-                <form onSubmit={registerUser}>
-                    <img src="https://i.imgur.com/C9YJkX6.png" alt="" />
-                    <br />
-
-                    <input
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        type="text"
-                        placeholder="Name"
-				    />
-
-                    {/* <input type="Date" placeholder="DOB" /> */}
-                    <input
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        type="email"
-                        placeholder="Email"
-				    />
-                    <input
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        type="password"
-                        placeholder="Password"
-				    />
-                    <input
-                        value={repassword}
-                        onChange={(e) => setRepassword(e.target.value)}
-                        type="password"
-                        placeholder="Re-enter Password"
-				    />
-                    <button className='signIn-btn' type='submit' >Sign Up</button>
-                </form>
+          )
+    }
+    else
+    {
+        return (
+            <div className='register-content'>
+        
+                <div className="container">
+        
+                    <div className="left">
+                        <h1>Already a member?</h1>
+                        <button className="signUp-btn" onClick={() => navigate("/login")}> Sign In</button>
+                    </div>
+        
+                    <div className="right">
+                        <form onSubmit={registerUser}>
+                            <img src="https://i.imgur.com/C9YJkX6.png" alt="" />
+                            <br />
+        
+                            <input
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                type="text"
+                                placeholder="Name"
+                            />
+        
+                            {/* <input type="Date" placeholder="DOB" /> */}
+                            <input
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                type="email"
+                                placeholder="Email"
+                            />
+                            <input
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <input
+                                value={repassword}
+                                onChange={(e) => setRepassword(e.target.value)}
+                                type="password"
+                                placeholder="Re-enter Password"
+                            />
+                            <button className='signIn-btn' type='submit' >Sign Up</button>
+                        </form>
+                    </div>
+        
+                </div>
+        
             </div>
+          )
+    }
 
-        </div>
-
-    </div>
-  )
 }
 
