@@ -122,27 +122,27 @@ export default function Aniheader(props) {
   }, [])
 
 
-  console.log("like: ")
-  console.log(likebool)
-  var likebutton;
+  // console.log("like: ")
+  // console.log(likebool)
+  // var likebutton;
 
-  if (userLike === false) {    
-    likebutton =<button className={isVertical ? "more-btn vertical" : "more-btn"} 
-                  onClick={() => {
-                    like()
-                  }} 
-                  >
-                  <ThumbUpOutlined className='icon'/>
-                </button>
-  } else {
-    likebutton = <button className={isVertical ? "more-btn vertical" : "more-btn"} 
-                  onClick={() => {
-                    remove_like()
-                  }} 
-                  >
-                  <ThumbDownAltOutlined className='icon'/>
-                </button>
-  }
+  // if (userLike === false) {    
+  //   likebutton =<button className={isVertical ? "more-btn vertical" : "more-btn"} 
+  //                 onClick={() => {
+  //                   like()
+  //                 }} 
+  //                 >
+  //                 <ThumbUpOutlined className='icon'/>
+  //               </button>
+  // } else {
+  //   likebutton = <button className={isVertical ? "more-btn vertical" : "more-btn"} 
+  //                 onClick={() => {
+  //                   remove_like()
+  //                 }} 
+  //                 >
+  //                 <ThumbDownAltOutlined className='icon'/>
+  //               </button>
+  // }
 
   try {
     return (
@@ -182,16 +182,20 @@ export default function Aniheader(props) {
               </div>
 
               <div className={likebool ? "buttons likebool" : "buttons"}  >
-
-                {likebutton}
-    
-                {/* <button className={isVertical ? "more-btn vertical" : "more-btn"}
-                      onClick={() => {
-                        remove_like()
-                        }} 
-                        >
+                <button className={isVertical ? "more-btn vertical" : "more-btn"} 
+                  onClick={() => {
+                    like()
+                  }} 
+                  >
+                  <ThumbUpOutlined className='icon'/>
+                </button>
+                <button className={isVertical ? "more-btn vertical" : "more-btn"} 
+                  onClick={() => {
+                    remove_like()
+                  }} 
+                  >
                   <ThumbDownAltOutlined className='icon'/>
-                </button> */}
+                </button>
     
               </div>
           </div>
