@@ -40,8 +40,8 @@ Mock Web Application similar to existing subscription based steaming services.
 
 
 # MongoDB data 
-Most information about Anime entries in the database were obtained using JikanV4(MyAnimeList unofficial API). For the video entries I used hyperlinks to https://staging.animethemes.moe (Website that hosts Anime Themes).  
-I wrote Python scripts to fetch the data and build the MongoDB Database.
+Most information about Anime entries in the database were obtained using JikanV4(MyAnimeList unofficial API). The video entries use hyperlinks to https://staging.animethemes.moe (Website that hosts Anime Themes).  
+The Python scripts are used to fetch the data and build the MongoDB Database.
 
 ### Python Scripts Dependencies
      pip install requests
