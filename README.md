@@ -63,9 +63,9 @@ The Python scripts are used to fetch the data and build the MongoDB Database.
 ```
 
 # Deployment
-### Front-end - Netlify
+### Front-end - Vercel  
 Service that hosts the ReactJS Client application  
-https://www.netlify.com    
+https://vercel.com  
 
 ### Back-end - Heroku  
 Service that hosts the ExpressJS Server application    
@@ -77,7 +77,7 @@ Cloud base mongoDB database
 https://www.mongodb.com/atlas/database
 
 # Link to webiste  
-https://glistening-griffin-8ee37f.netlify.app/ 
+https://afox-client.vercel.app/
 
 
 # Running examples 
