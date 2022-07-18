@@ -5,10 +5,8 @@ import "./registercontent.scss"
 
 export default function Registercontent() {
 
-    const token = localStorage.getItem('token')
-    
     const navigate = useNavigate()
-
+    const token = localStorage.getItem('token')
     const [loading, setLoading] = useState(false)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')

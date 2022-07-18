@@ -5,7 +5,6 @@ import Listitem from '../listItem/Listitem'
 import './list.scss'
 
 export default function List(props) {
-  
   return (
     <div className='list'>
       

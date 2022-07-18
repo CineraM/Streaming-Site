@@ -3,11 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import "./logincontent.scss"
 
 export default function Logincontent() {
-    const token = localStorage.getItem('token')
-    const admin_token = localStorage.getItem('admin_token')
 
     localStorage.setItem('LS_ID', '19')         // default anime page id
-
+    const token = localStorage.getItem('token')
+    const admin_token = localStorage.getItem('admin_token')
     const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
@@ -91,9 +90,6 @@ export default function Logincontent() {
                                 type="password"
                                 placeholder="Password"
                             />
-        
-                            {/* <a href="https://cdn.discordapp.com/attachments/222875289271664644/980645220288954398/277968806_1162241284539661_4886726701017993053_n.mp4">
-                                Forgot your password?</a> */}
                             <button className='signIn-btn' type='submit'>Sign In</button>
                         </form>
                     </div>

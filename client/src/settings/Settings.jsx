@@ -5,14 +5,14 @@ import "./settings.scss"
 import { useNavigate } from "react-router-dom"
 import jwt from 'jwt-decode'
 
-
 export default function Settings() {
+
     let navigate = useNavigate();
     const token = localStorage.getItem('token')
 
     useEffect(() => {
         document.title = "Ani-Fox"
-
+        // user validation
         if (token) {
             const user = jwt(token)
             if (!user) {
@@ -35,7 +35,6 @@ export default function Settings() {
             <div className='content'>
                 <SettingsContent />
             </div>
-            
         </div>
       )
 }

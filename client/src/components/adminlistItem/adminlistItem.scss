@@ -1,8 +1,5 @@
 
 .admin-listItem{
-    //width: 320px;
-    //height: 450px;
-    //overflow-y: hidden;
     background-color: var(--main-color);
     margin-right: 10px;
     cursor: pointer;
@@ -11,8 +8,6 @@
     img{
         height: 280px;
         position: relative;
-        //width: 100%;
-        //object-fit: contain;
     }
 
     .newfeat{
@@ -69,8 +64,6 @@
         text-indent: -9999px;
     }
     transform: scale(1.05);
-    // opacity: 1;
-    // z-index: 10;
     
     overflow: visible;
     // box shadow

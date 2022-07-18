@@ -1,0 +1,72 @@
+.nfound{
+    background-color: var(--main-color);
+    overflow: hidden;
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img{
+    height: 35vh;
+    border-radius: 5px;     // smooth the borders of the image
+    object-fit: cover;      // streches to cover, same aspect ratio
+    cursor: pointer;
+}
+
+.logo{
+    margin-top: 10%;
+}
+
+
+
+.text
+{
+    font-size: 70px;
+    text-align: center;
+    color: #FF4C29;   
+}
+
+button{
+
+    padding: 25px 35px;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    width: auto;
+    font-weight: 500px;
+    margin-right: 10px;
+    cursor: pointer;
+    
+    background-color: #FF4C29;
+    border: 3px solid black;
+    color: var(--main-color);
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    transform: scale(1.1);
+    opacity: 1;
+    color: white;
+}
+
+// scroll bar stuff
+::-webkit-scrollbar{
+    cursor: pointer;
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    background: #334756;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #FF4C29;
+}
+
+  

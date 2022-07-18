@@ -4,12 +4,11 @@ import "./settingscontent.scss"
 
 export default function Settingscontent() {
 
+    const navigate = useNavigate()
     const [name] = useState(localStorage.getItem('user_name'))
     const [email] = useState(localStorage.getItem('user_email'))
     const [password, setPassword] = useState('')
     const [repassword, setRepassword] = useState('')
-
-    const navigate = useNavigate()
 
     async function changePass(event) {
         

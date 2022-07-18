@@ -1,3 +1,4 @@
+
 import "./app.scss"
 import Home from "./home/Home";
 import Anime from "./anime/Anime";
@@ -5,7 +6,7 @@ import Login from "./login/Login";
 import Register from "./register/Register";
 import Settings from "./settings/Settings";
 import Admin from "./admindash/Admindash";
-import Test from "./test/Test"
+import NotFound from "./notfound/Notfound";
 
 import {
   BrowserRouter as Router,
@@ -34,10 +35,10 @@ function App(){
 
         <Route path="/admin_dashboard" element={<Admin /> } />
 
-        {/* default path */}
-        <Route path="/*" element={<Login /> } /> 
-        {/* testing */}
-        {/* <Route path="/testing" element={<Test /> } /> */}
+        <Route path="/notfound" element={<NotFound /> } />
+
+        <Route path="/*" element={<NotFound /> } /> 
+
 
     </Routes>
   </Router>

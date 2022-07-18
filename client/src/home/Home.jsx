@@ -8,23 +8,20 @@ import jwt from 'jwt-decode'
 import { useNavigate } from "react-router-dom"
 
 const Home = () => {
-  const [loading, setLoading] = useState(true)
 
+  let navigate = useNavigate();
+  const token = localStorage.getItem('token')
+  const admin_token = localStorage.getItem('admin_token')
+  const [loading, setLoading] = useState(true)
   const [action, setAction] = useState([])
   const [drama, setDrama] = useState([])
   const [adventure, setAdventure] = useState([])
   const [comedy, setComedy] = useState([])
   const [sports, setSports] = useState([])
   const [movies, setMovies] = useState([])
-
-  const token = localStorage.getItem('token')
-  const admin_token = localStorage.getItem('admin_token')
-
-  let navigate = useNavigate();
   
   useEffect(() => {
     document.title = "Ani-Fox"
-
     // admin validation
     if (admin_token) {
       // if admin user, remove user token
@@ -96,6 +93,7 @@ const Home = () => {
       // eslint-disable-next-line
   }, [])
 
+  // Fetching, display loading animation
   if(loading)
   {
       return (
@@ -125,43 +123,7 @@ const Home = () => {
     </div>
   )
   }
-
-  // return (
-  //   <div className='home'>
-
-  //     <Navbar/>
-  //     {loading ? "test" : <div className="loader"></div>}
-      
-  //     <Featured/>
-
-  //     <br/>
-  //     <List title="Action" data={action} isInAnime={false}/>
-  //     <List title="Drama" data={drama} isInAnime={false}/>
-  //     <List title="Adventure" data={adventure} isInAnime={false}/>
-  //     <List title="Comedy" data={comedy} isInAnime={false}/>
-  //     <List title="Sports" data={sports} isInAnime={false}/>
-  //     <List title="Movies" data={movies} isInAnime={false}/>
-  //     <br/>
-      
-  //     <Footer/>
-      
-  //   </div>
-  // )
-
 }
 
 export default Home
 
-
-
-        // async function fetchList(list) 
-        // {
-        //     try {
-        //         const response = await fetch(`https://anifox-cinera.herokuapp.com/api/${list}`, {
-        //             method: 'GET'
-        //         });
-        //         const mylist = await response.json();
-        //         return mylist;
-        //     } 
-        //     catch (error) {console.error(error);}
-        // }

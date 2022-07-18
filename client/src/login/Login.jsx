@@ -4,16 +4,13 @@ import "./login.scss"
 
 
 export default function Login() {
-
   useEffect(() => {
     document.title = "Ani-Fox"
-  
   }, [])
   
   return (
-    
     <div className="login">
-        <Logincontent />
+        <Logincontent/>
     </div>
   )
 }

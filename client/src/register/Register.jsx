@@ -4,7 +4,6 @@ import "./register.scss"
 
 
 export default function Login() {
-  
   useEffect(() => {
     document.title = "Ani-Fox"
   }, [])

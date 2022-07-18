@@ -1,21 +1,21 @@
-import { AddOutlined, ThumbDownAltOutlined, ThumbUpOutlined } from "@material-ui/icons"
+import { ThumbDownAltOutlined, ThumbUpOutlined } from "@material-ui/icons"
 import { useEffect, useState } from 'react'
-// import Anicontent from "../anicontent/Anicontent"
 import "./aniheader.scss"
 
 export default function Aniheader(props) {
 
-  var userLike = true
   const [user, setUser] = useState(localStorage.getItem('user_email'))
   const [anime, setAnime] = useState(localStorage.getItem('LS_ID'))
   const [genres, setGenres] = useState('')
   const [likebool, setLikebool] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [aniId, setAniId] = useState(localStorage.getItem('LS_ID'))
 
   // usestate from react, use a bool variable in the css file
   const [isVertical, setIsVertical] = useState(false);
   const [aniData, setAniData] = useState([{}])
 
-  const aniId = localStorage.getItem('LS_ID')
+
   // console.log(aniData.links[0])
 
   window.onresize = () =>{
@@ -36,6 +36,8 @@ export default function Aniheader(props) {
         }),
     })
     const data = await response.json()
+    console.log(data)
+    setLikebool(data)
   }
 
 
@@ -53,7 +55,7 @@ export default function Aniheader(props) {
     })
 
     const data = await response.json()
-
+    getUserLike()
     if (data.status === 'ok') {
         console.log("Succesfull like")
     }
@@ -72,7 +74,7 @@ export default function Aniheader(props) {
     })
 
     const data = await response.json()
-
+    getUserLike()
     if (data.status === 'ok') {
         console.log("Like Removed")
     }
@@ -96,8 +98,9 @@ export default function Aniheader(props) {
               aniId,
             }),
           });
-  
           const mylist = await response.json();
+          setAniData(mylist)
+          setLoading(false)
           return mylist;
         } 
         catch (error) 
@@ -113,104 +116,88 @@ export default function Aniheader(props) {
       setUser(localStorage.getItem('user_email'));
       setAnime(aniDataList.id);
       setGenres(aniDataList.genres);
-      
-      var userLike = await getUserLike()
+      getUserLike();
     }
 
     getAniData()
     // eslint-disable-next-line
   }, [])
 
-
-  // console.log("like: ")
-  // console.log(likebool)
-  // var likebutton;
-
-  // if (userLike === false) {    
-  //   likebutton =<button className={isVertical ? "more-btn vertical" : "more-btn"} 
-  //                 onClick={() => {
-  //                   like()
-  //                 }} 
-  //                 >
-  //                 <ThumbUpOutlined className='icon'/>
-  //               </button>
-  // } else {
-  //   likebutton = <button className={isVertical ? "more-btn vertical" : "more-btn"} 
-  //                 onClick={() => {
-  //                   remove_like()
-  //                 }} 
-  //                 >
-  //                 <ThumbDownAltOutlined className='icon'/>
-  //               </button>
-  // }
-
-  try {
-    return (
-      <div className={isVertical ? "aniheader vertical" : "aniheader"}>
-        <video 
-          autoPlay
-          loop
-          muted
-          src= {aniData.links[0]}  // passing a javascript variable
-        /> 
-
-      <div className="info">
-          <div className="left">
-            <img className='poster' src={aniData.images} alt="" />
-          </div>
-          <div className='right'>
-            <h3 className={isVertical ? "title vertical" : "title"}>
-              {aniData.title}
-              </h3>
-              <br />
-              <p className={isVertical ? "desc vertical" : "desc"}>{aniData.synopsis}</p>
-              
-    
-              <div className={isVertical ? "details vertical" : "details"}>
-                <p className={isVertical ? "related vertical" : "related"}>
-                  Season: {aniData.season}
-                </p>
-                <p className={isVertical ? "related vertical" : "related"}>
-                  Genre(s): {aniData.genres}
-                </p>
-                <p className={isVertical ? "related vertical" : "related"}>
-                  Studio(s): {aniData.studios}
-                </p>
-                <p className={isVertical ? "related vertical" : "related"}>
-                  Rating: {aniData.rating}
-                </p>
-              </div>
-
-              <div className={likebool ? "buttons likebool" : "buttons"}  >
-                <button className={isVertical ? "more-btn vertical" : "more-btn"} 
+  var likebutton;
+  if (likebool === false) {    
+    likebutton =<button className={isVertical ? "like-btn vertical" : "like-btn"} 
                   onClick={() => {
                     like()
                   }} 
                   >
                   <ThumbUpOutlined className='icon'/>
                 </button>
-                <button className={isVertical ? "more-btn vertical" : "more-btn"} 
+  } else {
+    likebutton = <button className={isVertical ? "dislike-btn vertical" : "dislike-btn"} 
                   onClick={() => {
                     remove_like()
                   }} 
                   >
                   <ThumbDownAltOutlined className='icon'/>
                 </button>
-    
-              </div>
-          </div>
-    
-        </div>
-      </div>
+  }
 
-    )
-  } catch (error) 
+
+  if(loading)
   {
-    return (
-
+    return(
+      <div className="aniheader">        
+        <div className="loader"></div>
+      </div> 
+    )
+  }
+  else
+  {
+      return (
         <div className={isVertical ? "aniheader vertical" : "aniheader"}>
-    </div>
-    )  
+          <video 
+            autoPlay
+            loop
+            muted
+            src= {aniData.links[0]}  // passing a javascript variable
+          /> 
+  
+        <div className="info">
+            <div className="left">
+              <img className={isVertical ? "poster vertical" : "poster"} src={aniData.images} alt="" />
+            </div>
+            <div className='right'>
+              <h3 className={isVertical ? "title vertical" : "title"}>
+                {aniData.title}
+                </h3>
+                <br />
+                <p className={isVertical ? "desc vertical" : "desc"}>{aniData.synopsis}</p>
+                
+      
+                <div className={isVertical ? "details vertical" : "details"}>
+                  <p className={isVertical ? "related vertical" : "related"}>
+                    Season: {aniData.season}
+                  </p>
+                  <p className={isVertical ? "related vertical" : "related"}>
+                    Genre(s): {aniData.genres}
+                  </p>
+                  <p className={isVertical ? "related vertical" : "related"}>
+                    Studio(s): {aniData.studios}
+                  </p>
+                  <p className={isVertical ? "related vertical" : "related"}>
+                    Rating: {aniData.rating}
+                  </p>
+                </div>
+  
+                <div className={likebool ? "buttons likebool" : "buttons"}  >
+                  {likebutton}
+                </div>
+            </div>
+          </div>
+        </div>
+      )
+    
+
   }
 
 

@@ -5,13 +5,12 @@ import "./featured.scss"
 
 export default function Features() {
 
+  let navigate = useNavigate();
   // usestate from react, use a bool variable in the css file
   const [isVertical, setIsVertical] = useState(false);
   const [featured, setFeatured] = useState([])
   const [index, setIndex] = useState(0)
-  let navigate = useNavigate();
-
-
+  
   // if the page offset is larger than 0, unblur the navbar
   window.onresize = () =>{
     // let aspectRatio = window.innerWidth/window.innerHeight;
@@ -19,9 +18,9 @@ export default function Features() {
     return() => (window.onresize = null);
   };
 
-
   async function getFeatured() 
   {
+    // Fetch the DB, return all featured
     async function fetchFeatured() 
     {
         try {
@@ -30,12 +29,10 @@ export default function Features() {
               
             });
             const mylist = await response.json();
-            // console.log(mylist)
             return mylist;
         } 
         catch (error) {console.error(error);}
     }
-
       const featuredList = await fetchFeatured("Comedy");
       setFeatured(featuredList);
   }
@@ -54,7 +51,6 @@ export default function Features() {
   
       <div className={isVertical ? "category vertical" : "category"}>
         <span>Genres</span>
-        {/* <select className="genres" name="genre" id="genre"> */}
         <select className={isVertical ? "genres vertical" : "genres"} onChange={e => {
           setIndex(e.target.value)
         }}>
@@ -100,11 +96,9 @@ export default function Features() {
               {/* <button className={isVertical ? "more-btn vertical" : "more-btn"}>
                 <AddOutlined className='icon'/>
               </button>
-  
               <button className={isVertical ? "more-btn vertical" : "more-btn"}>
                 <ThumbUpOutlined className='icon'/>
               </button>
-  
               <button className={isVertical ? "more-btn vertical" : "more-btn"}>
                 <ThumbDownAltOutlined className='icon'/>
               </button> */}

@@ -6,6 +6,13 @@ import { useNavigate } from "react-router-dom";
 // Scroll function to change the opacity of the navbar
 const Navbar = () => {
 
+    // navigate
+    let navigate = useNavigate();
+    const query_name = localStorage.getItem('user_name')
+    const name = query_name.charAt(0).toUpperCase() + query_name.slice(1);
+    // usestate from react, use a bool variable in the css file
+    const[isScrolled, setIsScrolled] = useState(false);
+
   function logout() 
   {
     localStorage.removeItem('token')
@@ -13,22 +20,10 @@ const Navbar = () => {
     localStorage.removeItem('user_name')
     navigate('/login')
 	}  
-
   function settings() 
   {
     navigate('/settings')
 	}  
-  // navigate
-  let navigate = useNavigate();
-
-
-  const query_name = localStorage.getItem('user_name')
-  const name = query_name.charAt(0).toUpperCase() + query_name.slice(1);
-  
-  
-  // usestate from react, use a bool variable in the css file
-  const[isScrolled, setIsScrolled] = useState(false);
-
   // if the page offset is larger than 0, unblur the navbar
   window.onscroll = () =>{
     setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -52,15 +47,10 @@ const Navbar = () => {
             onClick={() => navigate("/home")}>
               Homepage 
             </span>
-
           </div>
 
           <div className="right">
-            {/* <Search className='icon'/> */}
             <span>Welcome back {name}</span>
-
-            {/* <img src="https://blog.jodilogik.com/wp-content/uploads/2016/05/people-1.png" alt="" /> */}
-
             {/* <Notifications className='icon'/> */}
             <div className="profile">
               <ArrowDropDown className='icon'/>
@@ -69,7 +59,6 @@ const Navbar = () => {
                 <span className='settings-btn' onClick={settings}>Setting</span>
 
                 <span className='logout-btn' onClick={logout}>Logout</span>
-                {/* onClick={lougout} */}
               </div>
             </div>
           </div>

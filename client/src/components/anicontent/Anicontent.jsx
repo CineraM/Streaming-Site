@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./anicontent.scss"
 
-
 export default function Anicontent(props) {
   
-
   const[select, setSelect] = useState('');
   const [aniData, setAniData] = useState([])
   const aniId = localStorage.getItem('LS_ID')
@@ -13,7 +11,6 @@ export default function Anicontent(props) {
   {
       try 
       {
-
         const response = await fetch('https://anifox-cinera.herokuapp.com/api/anime', {
           method: 'POST',
           headers: {
@@ -25,7 +22,6 @@ export default function Anicontent(props) {
         });
 
         const mylist = await response.json();
-        // console.log(mylist)
         return mylist;
       } 
       catch (error) 
@@ -48,14 +44,13 @@ export default function Anicontent(props) {
  
   try {
     return (
-
       <div className="anicontent">
           <div className="container">
             <div className="right">
   
               <video 
               controls  
-                src= {select}  // passing a javascript variable
+                src= {select}
               />
             </div>
   
@@ -76,13 +71,11 @@ export default function Anicontent(props) {
               </select>
             </div>
   
-  
           </div>
       </div>
     )
   } catch (error) {
     return (
-
       <div className="anicontent">
         This should not load
       </div>

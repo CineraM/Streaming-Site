@@ -19,6 +19,7 @@ export default function Anime() {
   const [mylist, setMylist] = useState([])
   const [user] = useState(localStorage.getItem('user_email'))
 
+  // Get the series the user liked
   async function get_user_list() {    
     try {
       const response = await fetch('https://anifox-cinera.herokuapp.com/api/get_user_likes_genre', {

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
 import "./admindash.scss"
 import List from "../components/adminlist/Adminlist"
 import Navbar from "../components/navbar/Navbar"
@@ -9,7 +8,7 @@ export default function Admindash() {
 
     let navigate = useNavigate();
     const token = localStorage.getItem('token')
-    // const admin_token = localStorage.getItem('admin_token')
+    const [loading, setLoading] = useState(true)
     const [action, setAction] = useState([])
     const [drama, setDrama] = useState([])
     const [adventure, setAdventure] = useState([])
@@ -18,6 +17,7 @@ export default function Admindash() {
     const [movies, setMovies] = useState([])
     const [featured, setFeatured] = useState([])
 
+    // Get All featured, Json list from DB
     async function getFeatured() 
     {
       async function fetchFeatured() 
@@ -28,7 +28,6 @@ export default function Admindash() {
                 
               });
               const mylist = await response.json();
-              // console.log(mylist)
               return mylist;
           } 
           catch (error) {console.error(error);}
@@ -39,6 +38,7 @@ export default function Admindash() {
     }
     
     useEffect(() => {
+        // Token --> User is logged in, return to home
         if (token) {
             navigate('/home')
           }
@@ -47,9 +47,9 @@ export default function Admindash() {
         // Query and store genres
         async function getLists() 
         {
+            // Function that fetches all anime genres.
             async function fetchList(list) 
             {
-            // setGenre(list)
             const genre = list
                 try {
                     const response = await fetch(`https://anifox-cinera.herokuapp.com/api/animeGenres`, {
@@ -62,7 +62,6 @@ export default function Admindash() {
                     }),
                     });
                     const mylist = await response.json();
-                    // console.log(mylist)
                     return mylist;
                 } 
                 catch (error) {console.error(error);}
@@ -85,7 +84,8 @@ export default function Admindash() {
     
             const moviesList = await fetchList("Avant Garde");
             setMovies(moviesList);
-    
+            
+            setLoading(false)
             return actionList; 
         }
     
@@ -94,7 +94,17 @@ export default function Admindash() {
         // eslint-disable-next-line
     }, [])
 
-    try {
+
+    if(loading)
+    {
+        return (
+            <div className="anime">        
+              <div className="loader"></div>
+            </div> 
+            )
+    }
+    else
+    {
         return (
             <div className='admin'>
                 <Navbar/>
@@ -170,8 +180,7 @@ export default function Admindash() {
     
             </div>
       )
-    } catch (error) {
-        <div>meh</div>   
     }
+
 
 }

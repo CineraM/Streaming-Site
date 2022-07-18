@@ -33,15 +33,15 @@ require("dotenv").config();
 app.use(cors())
 app.use(express.json())
 
-// mongoose.connect('mongodb://localhost:27017/ani-fox-db')
-const connectionParams = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}
-mongoose.connect(
-	'mongodb+srv://cinera:J1CChi5NAymL2iSa@mern.jdhu32d.mongodb.net/ani-fox-db?retryWrites=true&w=majority',
-	connectionParams
-	);
+mongoose.connect('mongodb://localhost:27017/ani-fox-db')
+// const connectionParams = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }
+// mongoose.connect(
+// 	'mongodb+srv://cinera:J1CChi5NAymL2iSa@mern.jdhu32d.mongodb.net/ani-fox-db?retryWrites=true&w=majority',
+// 	connectionParams
+// 	);
 
 
 app.post('/api/register_admin', async (req, res) => {

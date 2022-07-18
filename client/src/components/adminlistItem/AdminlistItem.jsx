@@ -11,9 +11,8 @@ export default function Listitem(props) {
   const [title, setTitle] = useState('')
   const [likes, setLikes] = useState([])
 
-  
+  // Change the featured series on the database
   async function changeFeatured() {
-        
     const response = await fetch('https://anifox-cinera.herokuapp.com/api/change_featured', {
         method: 'POST',
         headers: {
@@ -37,6 +36,7 @@ export default function Listitem(props) {
     }
 }
 
+// Get likes for a specific series
 async function get_anime_likes() {
   try {
     const response = await fetch('https://anifox-cinera.herokuapp.com/api/get_anime_likes', {
@@ -87,7 +87,6 @@ useEffect(() => {
             src={props.poster}
             alt="" />
       </div>
-
 
         <div className='itemInfo'>
         <div className='title'>
