@@ -96,7 +96,7 @@
             display: flex;
             margin-left: 50px;
 
-            .like-btn{
+            .removelike-btn{
                 &.vertical{ 
                     padding: 5px 10px;
                 }
@@ -119,7 +119,7 @@
                 transition-duration: 0.4s;
             }
 
-            .dislike-btn{
+            .like-btn{
                 &.vertical{ 
                     padding: 5px 10px;
                 }
@@ -149,12 +149,12 @@
     }
 }
 
-.like-btn:hover{
+.removelike-btn:hover{
     transform: scale(1.1);
     opacity: 1;
 }
 
-.dislike-btn:hover{
+.like-btn:hover{
     transform: scale(1.1);
     opacity: 1;
 }

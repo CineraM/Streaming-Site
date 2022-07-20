@@ -1,4 +1,4 @@
-import { ThumbDownAltOutlined, ThumbUpOutlined } from "@material-ui/icons"
+import { ThumbUpOutlined, ThumbUpAltOutlined } from "@material-ui/icons"
 import { useEffect, useState } from 'react'
 import "./aniheader.scss"
 
@@ -133,12 +133,12 @@ export default function Aniheader(props) {
                   <ThumbUpOutlined className='icon'/>
                 </button>
   } else {
-    likebutton = <button className={isVertical ? "dislike-btn vertical" : "dislike-btn"} 
+    likebutton = <button className={isVertical ? "removelike-btn vertical" : "removelike-btn"} 
                   onClick={() => {
                     remove_like()
                   }} 
                   >
-                  <ThumbDownAltOutlined className='icon'/>
+                  <ThumbUpAltOutlined className='icon'/>
                 </button>
   }
 
