@@ -82,7 +82,7 @@ https://afox-client.vercel.app/
 
 # Running examples 
 ### Featured Section  
-![Screenshot 2022-06-15 044844](https://user-images.githubusercontent.com/64340009/173786435-d139e825-be96-4d54-ad21-dd6723eebcc2.jpg)  
+![image](https://user-images.githubusercontent.com/64340009/180123633-f8f9ee30-d5e7-4d0e-8144-7dba61586111.png)  
 
 
 ### Sliders for Genres  
@@ -91,7 +91,7 @@ https://afox-client.vercel.app/
 
 ### Anime Page  
 ![Screenshot 2022-06-15 045313](https://user-images.githubusercontent.com/64340009/173786771-201d5db6-80c3-4d56-98f4-725db3d157c6.jpg)  
-![Screenshot 2022-06-15 045129](https://user-images.githubusercontent.com/64340009/173786699-ea522ed5-e574-4f2a-81aa-f2da6a54a451.jpg)  
+![image](https://user-images.githubusercontent.com/64340009/180123151-d92a7f49-2bc6-434e-9892-c76892200e9c.png)  
 
 
 ### Login/register  
@@ -100,3 +100,7 @@ https://afox-client.vercel.app/
 
 ### Admin Dashboard    
 ![image](https://user-images.githubusercontent.com/64340009/178165353-175c8ff2-b193-468d-8523-88d7b3bd3c7c.png)
+
+### Page not found
+![image](https://user-images.githubusercontent.com/64340009/180123727-63690ab1-955f-4e7f-8aac-9106c0f280c9.png)
+
