@@ -89,9 +89,10 @@ https://afox-client.vercel.app/
 ![Screenshot 2022-06-15 044952](https://user-images.githubusercontent.com/64340009/173786476-6e81ef04-5a16-4457-9fba-d2b17e97e4c7.jpg)  
 
 
-### Anime Page  
-![Screenshot 2022-06-15 045313](https://user-images.githubusercontent.com/64340009/173786771-201d5db6-80c3-4d56-98f4-725db3d157c6.jpg)  
+### Anime Page   
 ![image](https://user-images.githubusercontent.com/64340009/180123151-d92a7f49-2bc6-434e-9892-c76892200e9c.png)  
+![image](https://user-images.githubusercontent.com/64340009/180123857-45e0fb77-fa0f-4b72-b220-7de842205879.png)  
+
 
 
 ### Login/register  
