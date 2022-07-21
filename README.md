@@ -80,7 +80,7 @@ https://www.mongodb.com/atlas/database
 https://afox-client.vercel.app/
 
 
-# Running examples 
+# Demo  
 ### Featured Section  
 ![image](https://user-images.githubusercontent.com/64340009/180123633-f8f9ee30-d5e7-4d0e-8144-7dba61586111.png)  
 
