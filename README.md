@@ -46,8 +46,7 @@ The Python scripts are used to fetch the data and build the MongoDB Database.
 ### Python Scripts Dependencies
      pip install requests
      pip install json
-     pip install pymongo
-     pip install tensorflow
+     pip install pymongo  
 
 ### PythonScripts Structure
 ```
