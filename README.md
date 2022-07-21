@@ -24,8 +24,8 @@ Mock Web Application similar to existing subscription based steaming services.
      yarn start
 
 
-## React WebApp
-### WebApp Dependencies
+## React Client
+### Client Dependencies
      yarn add sass
      yarn add yarn add @material-ui/icons @material-ui/core
      yarn add react-router-dom
@@ -34,7 +34,7 @@ Mock Web Application similar to existing subscription based steaming services.
      yarn add jwt-decode
      https://fonts.google.com/specimen/Roboto#standard-styles  
      ^^^ Google fonts
-### Run WebApp
+### Run Client
      yarn init
      yarn dev
 
