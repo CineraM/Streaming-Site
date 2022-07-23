@@ -71,7 +71,7 @@ Service that hosts the ExpressJS Server application
 https://heroku.com     
       
 
-### Front-end - MongoDB Atlas Database
+### Database - MongoDB Atlas Database
 Cloud base mongoDB database  
 https://www.mongodb.com/atlas/database
 
