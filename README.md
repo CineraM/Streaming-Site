@@ -66,9 +66,9 @@ The Python scripts are used to fetch the data and build the MongoDB Database.
 Service that hosts the ReactJS Client application  
 https://vercel.com  
 
-### Back-end - Heroku  
+### Back-end - Render  
 Service that hosts the ExpressJS Server application    
-https://heroku.com     
+https://render.com     
       
 
 ### Database - MongoDB Atlas Database
@@ -76,7 +76,7 @@ Cloud base mongoDB database
 https://www.mongodb.com/atlas/database
 
 # Link to webiste  
-https://afox-client.vercel.app/
+https://ani-fox-client-nypiytuyj-cineram.vercel.app/
 
 
 # Demo  
