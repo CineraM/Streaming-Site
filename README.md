@@ -2,7 +2,7 @@
 Mock Web Application similar to existing subscription-based streaming services.
 
 # Link to demo - webiste  
-ani-fox-client.vercel.app
+[ani-fox-client.vercel.app](ani-fox-client.vercel.app)
 
 - **Do not use real info (email, name, password) when registering**, although this is a mock website there is a database holding user information.
 - No email verification, just register with a dummy email
