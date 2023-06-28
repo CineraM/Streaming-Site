@@ -1,10 +1,17 @@
 # Anime Streaming Site
-Mock Web Application similar to existing subscription based steaming services.  
+Mock Web Application similar to existing subscription-based streaming services.
+
+# Link to demo - webiste  
+ani-fox-client.vercel.app
+
+- **Do not use real info (email, name, password) when registering**, although this is a mock website there is a database holding user information.
+- No email verification, just register with a dummy email
+- No password requirements
 
 ## Stack: MongoDB - Express - React - NodeJS
 
 **2 React applications:**  
-  Client: Application that handles the front-end and requests to the db,
+  Client: Application that handles the front-end and requests to the DB,
   Server: An ExpressJS server that works as an API to fetch and validate data from the database.  
   
 ### Package Manager 
@@ -75,9 +82,6 @@ https://render.com
 Cloud base mongoDB database  
 https://www.mongodb.com/atlas/database
 
-# Link to webiste  
-https://ani-fox-client-nypiytuyj-cineram.vercel.app/
-
 
 # Demo  
 ### Featured Section  
@@ -94,7 +98,7 @@ https://ani-fox-client-nypiytuyj-cineram.vercel.app/
 
 
 
-### Login/register  
+### Login / Register  
 ![Screenshot 2022-06-15 045404](https://user-images.githubusercontent.com/64340009/173786902-81adfa39-c887-4c90-a3eb-50a0852828dc.jpg)  
 ![image](https://user-images.githubusercontent.com/64340009/173787111-b04f0741-e117-4ab4-9c29-fea396bb2da6.png)
 
